@@ -1,0 +1,29 @@
+.art {
+    text-align: center;
+  }
+
+.art2 {
+    text-align: left;
+  }
+
+.gris {
+  color: gray;
+}
+
+.negrita {
+  font-weight: bolder;
+  color:white;  
+}
+
+.seccionPrincipal {
+  align-items: center;
+  color:#DDDDDD;
+}
+
+.oculto {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
