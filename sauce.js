@@ -10,13 +10,13 @@ const WETHId = '0.0.541564';
 const OTIAId = '0.0.5023135';
 const WBTCId = '0.0.1055483';
 const USDCId = '0.0.456858';
-const tenenciaHBAR = 144.842;
-const tenenciaXSauce = 24610.737;
+const tenenciaHBAR = 142.038;
+const tenenciaXSauce = 48919.241;
 const tenenciaSauce = 0;
 const tenenciaHLQT = 0;
 const tenenciaHCHF = 0;
 const tenenciaWETH = 1.92188842;
-const tenenciaWBTC = 0.12923165;
+const tenenciaWBTC = 0.10362165;
 const tenenciaUSDC = 0;
 const tenenciaOTIA = 0;
 
