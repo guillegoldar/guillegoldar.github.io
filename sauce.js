@@ -1,5 +1,6 @@
 // Definir la URL de la API
 const apiUrlHedera = 'https://api.saucerswap.finance/tokens/';
+const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol=';
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const XSauceId = '0.0.1460200';
 const SauceId = '0.0.731861';
@@ -10,15 +11,18 @@ const WETHId = '0.0.541564';
 const OTIAId = '0.0.5023135';
 const WBTCId = '0.0.1055483';
 const USDCId = '0.0.456858';
-const tenenciaHBAR = 142.038;
-const tenenciaXSauce = 48919.241;
+const ONDOsymbol = 'ONDOUSDT';
+const BTCsymbol = 'BTCUSDT';
+const tenenciaHBAR = 140.474;
+const tenenciaXSauce = 0;
 const tenenciaSauce = 0;
 const tenenciaHLQT = 0;
 const tenenciaHCHF = 0;
 const tenenciaWETH = 1.92188842;
-const tenenciaWBTC = 0.10362165;
+const tenenciaWBTC = 0.12903385;
 const tenenciaUSDC = 0;
 const tenenciaOTIA = 0;
+const tenenciaONDO = 1514.484;
 
 let obtenerCotHedera = (tokenId) => {
     try {
@@ -37,6 +41,26 @@ let obtenerCotHedera = (tokenId) => {
     }
     catch(error) {
       console.log('Error fetching data Hedera:', error);
+    }
+};
+
+let obtenerCotBitget = (symbol) => {
+    try {
+      let resultado;
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', apiUrlBitget+symbol, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
+      xhr.send();
+      if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          resultado = data;
+      } else {
+          console.error('Error fetching data:', xhr.statusText);
+      }
+      let cot = resultado.data[0].lastPr;
+      return cot;
+    }
+    catch(error) {
+      console.log('Error fetching data Bitget:', error);
     }
 };
 
@@ -60,28 +84,6 @@ let obtenerCotDolar=()=> {
   }
 };
 
-/*
-function obtenerCotBTC () {
-  try {
-    let resultado;
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', apiUrlBTC, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
-    xhr.send();
-    if (xhr.status === 200) {
-        const data = JSON.parse(xhr.responseText);
-        resultado = data;
-    } else {
-        console.error('Error fetching data:', xhr.statusText);
-    }
-    let cot = resultado.price;
-    return cot;
-  }
-  catch(error) {
-    console.log('Error fetching data Hedera:', error);
-  };
-}
-*/
-
 let calcularTotal=(Ind) => {  
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
   let cotSauce = document.getElementById('spCotSauce').innerText;
@@ -90,8 +92,10 @@ let calcularTotal=(Ind) => {
   let cotHCHF = document.getElementById('spCotHCHF').innerText;  
   let cotWETH = document.getElementById('spCotWETH').innerText;  
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
+  let cotBTC = document.getElementById('spCotBTC').innerText;  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
   let cotOTIA = document.getElementById ('spCotOTIA').innerText;
+  let cotONDO = document.getElementById ('spCotONDO').innerText;
   
   let part = 0.005
   if(Ind=='yo') 
@@ -104,7 +108,8 @@ let calcularTotal=(Ind) => {
 				   + tenenciaWETH * cotWETH 
 				   + tenenciaWBTC * cotWBTC
 				   + tenenciaUSDC * cotUSDC
-				   + tenenciaOTIA * cotOTIA)*part
+				   + tenenciaOTIA * cotOTIA
+				   + tenenciaONDO * cotONDO)*part
   return total;
 };
 
@@ -137,6 +142,13 @@ let calcularPesoOTIA=() => {
   let cotOTIA = document.getElementById('spCotOTIA').innerText;  
   let dOTIA = tenenciaOTIA * cotOTIA;
   let peso = dOTIA * 0.995 * 100 / calcularTotal('yo');
+  return peso;
+};
+
+let calcularPesoONDO=() => {  
+  let cotONDO = document.getElementById('spCotONDO').innerText;  
+  let dONDO = tenenciaONDO * cotONDO;
+  let peso = dONDO * 0.995 * 100 / calcularTotal('yo');
   return peso;
 };
 
@@ -185,7 +197,9 @@ let inicializar=()=>{
   document.getElementById('spCotHCHF').textContent = obtenerCotHedera(HCHFId);
   document.getElementById('spCotWETH').textContent = obtenerCotHedera(WETHId);
   document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
+  document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCsymbol);
   document.getElementById('spCotOTIA').textContent = obtenerCotHedera(OTIAId);
+  document.getElementById('spCotONDO').textContent = obtenerCotBitget(ONDOsymbol);
   document.getElementById('spCotUSDC').textContent = obtenerCotHedera(USDCId);
   document.getElementById('spCotDolar').textContent = obtenerCotDolar();
 }
@@ -205,7 +219,10 @@ let refrescar=()=>{
   document.getElementById('pWETH').textContent = ' (' + formatoNum(parseFloat(calcularPesoWETH()),2) +  '%)';
   document.getElementById('OTIA').textContent = formatoNum(parseFloat(document.getElementById('spCotOTIA').innerText),3);
   //document.getElementById('pOTIA').textContent = ' (' + formatoNum(parseFloat(calcularPesoOTIA()),2) +  '%)';
+  document.getElementById('ONDO').textContent = formatoNum(parseFloat(document.getElementById('spCotONDO').innerText),3);
+  document.getElementById('pONDO').textContent = ' (' + formatoNum(parseFloat(calcularPesoONDO()),2) +  '%)';  
   document.getElementById('WBTC').textContent = formatoNum(parseFloat(document.getElementById('spCotWBTC').innerText),2);
+  document.getElementById('BTC').textContent = formatoNum(parseFloat(document.getElementById('spCotBTC').innerText),2);
   document.getElementById('pWBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
   document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
   //document.getElementById('pUSDC').textContent = ' (' + formatoNum(parseFloat(calcularPesoUSDC()),2) +  '%)';
