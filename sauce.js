@@ -13,15 +13,15 @@ const WBTCId = '0.0.1055483';
 const USDCId = '0.0.456858';
 const ONDOsymbol = 'ONDOUSDT';
 const BTCsymbol = 'BTCUSDT';
-const tenenciaHBAR = 139.198;
+const tenenciaHBAR = 104.822;
 const tenenciaXSauce = 0;
 const tenenciaSauce = 28207.201;
 const tenenciaHLQT = 0;
 const tenenciaHCHF = 0;
 const tenenciaWETH = 1.92188842;
-const tenenciaWBTC = 0.07789385;
+const tenenciaWBTC = 0.05137385;
 const tenenciaUSDC = 0;
-const tenenciaOTIA = 0;
+const tenenciaOTIA = 264.25025598;
 const tenenciaONDO = 2984.10291;
 
 let obtenerCotHedera = (tokenId) => {
@@ -218,7 +218,7 @@ let refrescar=()=>{
   document.getElementById('WETH').textContent = formatoNum(parseFloat(document.getElementById('spCotWETH').innerText),2);
   document.getElementById('pWETH').textContent = ' (' + formatoNum(parseFloat(calcularPesoWETH()),2) +  '%)';
   document.getElementById('OTIA').textContent = formatoNum(parseFloat(document.getElementById('spCotOTIA').innerText),3);
-  //document.getElementById('pOTIA').textContent = ' (' + formatoNum(parseFloat(calcularPesoOTIA()),2) +  '%)';
+  document.getElementById('pOTIA').textContent = ' (' + formatoNum(parseFloat(calcularPesoOTIA()),2) +  '%)';
   document.getElementById('ONDO').textContent = formatoNum(parseFloat(document.getElementById('spCotONDO').innerText),3);
   document.getElementById('pONDO').textContent = ' (' + formatoNum(parseFloat(calcularPesoONDO()),2) +  '%)';  
   document.getElementById('WBTC').textContent = formatoNum(parseFloat(document.getElementById('spCotWBTC').innerText),2);
