@@ -13,15 +13,15 @@ const WBTCId = '0.0.1055483';
 const USDCId = '0.0.456858';
 const ONDOsymbol = 'ONDOUSDT';
 const BTCsymbol = 'BTCUSDT';
-const tenenciaHBAR = 104.822;
+const tenenciaHBAR = 102.938;
 const tenenciaXSauce = 0;
 const tenenciaSauce = 28207.201;
 const tenenciaHLQT = 0;
 const tenenciaHCHF = 0;
-const tenenciaWETH = 1.92188842;
+const tenenciaWETH = 1.87488842;
 const tenenciaWBTC = 0.05137385;
 const tenenciaUSDC = 0;
-const tenenciaOTIA = 264.25025598;
+const tenenciaOTIA = 293.46385494;
 const tenenciaONDO = 2984.10291;
 
 let obtenerCotHedera = (tokenId) => {
