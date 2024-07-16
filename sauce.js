@@ -22,7 +22,7 @@ const tenenciaWETH = 1.87488842;
 const tenenciaWBTC = 0.05137385;
 const tenenciaUSDC = 0;
 const tenenciaOTIA = 293.46385494;
-const tenenciaONDO = 2984.10291;
+const tenenciaONDO = 3013.21798809;
 
 let obtenerCotHedera = (tokenId) => {
     try {
