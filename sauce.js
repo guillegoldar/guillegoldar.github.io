@@ -232,6 +232,6 @@ let refrescar=()=>{
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotWBTC').innerText),2);
   document.getElementById('lea').textContent = formatoMoneda(calcularTotal('lea'),'USD');
   document.getElementById('xLea').textContent = ' (' + Math.trunc(calcularTotal('lea')/44) + 'x)';
-  document.getElementById('pLea').textContent = formatoMoneda(calcularTotal('lea')*document.getElementById('spCotDolar').innerText,'ARS');
+  //document.getElementById('pLea').textContent = formatoMoneda(calcularTotal('lea')*document.getElementById('spCotDolar').innerText,'ARS');
 }
 
