@@ -8,12 +8,12 @@ const HBARId = '0.0.1456986';
 const HLQTId = '0.0.6070128';
 const HCHFId = '0.0.6070123';
 const WETHId = '0.0.541564';
-const OTIAId = '0.0.5023135';
 const WBTCId = '0.0.1055483';
 const USDCId = '0.0.456858';
+const ORAIsymbol = 'ORAIUSDT';
 const ONDOsymbol = 'ONDOUSDT';
 const BTCsymbol = 'BTCUSDT';
-const tenenciaHBAR = 102.938;
+const tenenciaHBAR = 101.26;
 const tenenciaXSauce = 0;
 const tenenciaSauce = 28207.201;
 const tenenciaHLQT = 0;
@@ -21,7 +21,7 @@ const tenenciaHCHF = 0;
 const tenenciaWETH = 1.87488842;
 const tenenciaWBTC = 0.05137385;
 const tenenciaUSDC = 0;
-const tenenciaOTIA = 293.46385494;
+const tenenciaORAI = 110.44944;
 const tenenciaONDO = 3013.21798809;
 
 let obtenerCotHedera = (tokenId) => {
@@ -94,7 +94,7 @@ let calcularTotal=(Ind) => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotBTC = document.getElementById('spCotBTC').innerText;  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
-  let cotOTIA = document.getElementById ('spCotOTIA').innerText;
+  let cotORAI = document.getElementById ('spCotORAI').innerText;
   let cotONDO = document.getElementById ('spCotONDO').innerText;
   
   let part = 0.005
@@ -108,7 +108,7 @@ let calcularTotal=(Ind) => {
 				   + tenenciaWETH * cotWETH 
 				   + tenenciaWBTC * cotWBTC
 				   + tenenciaUSDC * cotUSDC
-				   + tenenciaOTIA * cotOTIA
+				   + tenenciaORAI * cotORAI
 				   + tenenciaONDO * cotONDO)*part
   return total;
 };
@@ -138,10 +138,10 @@ let calcularPesoHCHF=() => {
   return peso;
 };
 
-let calcularPesoOTIA=() => {  
-  let cotOTIA = document.getElementById('spCotOTIA').innerText;  
-  let dOTIA = tenenciaOTIA * cotOTIA;
-  let peso = dOTIA * 0.995 * 100 / calcularTotal('yo');
+let calcularPesoORAI=() => {  
+  let cotORAI = document.getElementById('spCotORAI').innerText;  
+  let dORAI = tenenciaORAI * cotORAI;
+  let peso = dORAI * 0.995 * 100 / calcularTotal('yo');
   return peso;
 };
 
@@ -198,7 +198,7 @@ let inicializar=()=>{
   document.getElementById('spCotWETH').textContent = obtenerCotHedera(WETHId);
   document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCsymbol);
-  document.getElementById('spCotOTIA').textContent = obtenerCotHedera(OTIAId);
+  document.getElementById('spCotORAI').textContent = obtenerCotBitget(ORAIsymbol);
   document.getElementById('spCotONDO').textContent = obtenerCotBitget(ONDOsymbol);
   document.getElementById('spCotUSDC').textContent = obtenerCotHedera(USDCId);
   document.getElementById('spCotDolar').textContent = obtenerCotDolar();
@@ -211,14 +211,10 @@ let refrescar=()=>{
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('sauce').textContent = formatoNum(parseFloat(document.getElementById('spCotSauce').innerText),3);
   document.getElementById('hbar').textContent = formatoNum(parseFloat(document.getElementById('spCotHBAR').innerText),3);
-  //document.getElementById('HLQT').textContent = formatoNum(parseFloat(document.getElementById('spCotHLQT').innerText),3);
-  //document.getElementById('pHQLT').textContent = ' (' + formatoNum(parseFloat(calcularPesoHQLT()),2) +  '%)';
-  //document.getElementById('HCHF').textContent = formatoNum(parseFloat(document.getElementById('spCotHCHF').innerText),2);
-  //document.getElementById('pHCHF').textContent = ' (' + formatoNum(parseFloat(calcularPesoHCHF()),2) +  '%)';
   document.getElementById('WETH').textContent = formatoNum(parseFloat(document.getElementById('spCotWETH').innerText),2);
   document.getElementById('pWETH').textContent = ' (' + formatoNum(parseFloat(calcularPesoWETH()),2) +  '%)';
-  document.getElementById('OTIA').textContent = formatoNum(parseFloat(document.getElementById('spCotOTIA').innerText),3);
-  document.getElementById('pOTIA').textContent = ' (' + formatoNum(parseFloat(calcularPesoOTIA()),2) +  '%)';
+  document.getElementById('ORAI').textContent = formatoNum(parseFloat(document.getElementById('spCotORAI').innerText),3);
+  document.getElementById('pORAI').textContent = ' (' + formatoNum(parseFloat(calcularPesoORAI()),2) +  '%)';
   document.getElementById('ONDO').textContent = formatoNum(parseFloat(document.getElementById('spCotONDO').innerText),3);
   document.getElementById('pONDO').textContent = ' (' + formatoNum(parseFloat(calcularPesoONDO()),2) +  '%)';  
   document.getElementById('WBTC').textContent = formatoNum(parseFloat(document.getElementById('spCotWBTC').innerText),2);
