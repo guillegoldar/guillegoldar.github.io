@@ -169,7 +169,7 @@ let refrescar=()=>{
   document.getElementById('total').textContent = formatoMoneda(calcularTotal('yo'),'USD');
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotXSauce').innerText),2);
-  document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotWBTC').innerText),2);
+  document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotWBTC').innerText),5);
   document.getElementById('lea').textContent = formatoMoneda(calcularTotal('lea'),'USD');
   document.getElementById('xLea').textContent = ' (' + Math.trunc(calcularTotal('lea')/44) + 'x)';
   document.getElementById('pLea').textContent = formatoMoneda(calcularTotal('lea')*document.getElementById('spCotDolar').innerText,'ARS');
