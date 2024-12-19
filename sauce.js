@@ -1,17 +1,17 @@
 // Definir la URL de la API
 const apiUrlHedera = 'https://api.saucerswap.finance/tokens/';
-'const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol=';
+//const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol=';
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const USDCId = '0.0.456858';
 const WBTCId = '0.0.1055483';
 const WETHId = '0.0.541564';
 const XSauceId = '0.0.1460200';
-const DinoId = '0.0.7907968';
+const DINOId = '0.0.7907968';
 const tenenciaUSDC = 3073.64;
 const tenenciaWBTC = 0.03014425;
 const tenenciaWETH = 0.85404243;
 const tenenciaXSauce = 20668.97;
-const tenenciaDino = 2138342.628;
+const tenenciaDINO = 2138342.628;
 
 let obtenerCotHedera = (tokenId) => {
     try {
@@ -78,7 +78,7 @@ let calcularTotal=(Ind) => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotWETH = document.getElementById('spCotWETH').innerText;  
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
-  let cotDino = document.getElementById('spCotDino').innerText;
+  let cotDINO = document.getElementById('spCotDINO').innerText;
   let part = 0.005
   if(Ind=='yo') 
     part = 0.995;
@@ -86,7 +86,7 @@ let calcularTotal=(Ind) => {
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaWETH * cotWETH 
 				   + tenenciaXSauce * cotXSauce 
-   				   + tenenciaDino * cotDino
+   				   + tenenciaDINO * cotDINO
 				)*part
 
   return total;
@@ -120,10 +120,10 @@ let calcularPesoXSauce=() => {
   return peso;
 };
 
-let calcularPesoDino=() => {  
-  let cotDino = document.getElementById('spCotDino').innerText;  
-  let dDino = tenenciaDino * cotDino;
-  let peso = dDino * 0.995 * 100 / calcularTotal('yo');
+let calcularPesoDINO=() => {  
+  let cotDINO = document.getElementById('spCotDINO').innerText;  
+  let dDINO = tenenciaDINO * cotDINO;
+  let peso = dDINO * 0.995 * 100 / calcularTotal('yo');
   return peso;
 };
 
@@ -148,7 +148,7 @@ let inicializar=()=>{
   document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
   document.getElementById('spCotWETH').textContent = obtenerCotHedera(WETHId);
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
-  document.getElementById('spCotDino').textContent = obtenerCotHedera(DinoId);
+  document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
   document.getElementById('spCotDolar').textContent = obtenerCotDolar();
 }
 
@@ -163,8 +163,8 @@ let refrescar=()=>{
   document.getElementById('pWETH').textContent = ' (' + formatoNum(parseFloat(calcularPesoWETH()),2) +  '%)';
   document.getElementById('xsauce').textContent = formatoNum(parseFloat(document.getElementById('spCotXSauce').innerText),3);
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
-  document.getElementById('DINO').textContent = formatoNum(parseFloat(document.getElementById('spCotDino').innerText),3);
-  document.getElementById('pDino').textContent = ' (' + formatoNum(parseFloat(calcularPesoDino()),2) +  '%)';
+  document.getElementById('DINO').textContent = formatoNum(parseFloat(document.getElementById('spCotDINO').innerText),5);
+  document.getElementById('pDINO').textContent = ' (' + formatoNum(parseFloat(calcularPesoDINO()),2) +  '%)';
   document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
   document.getElementById('total').textContent = formatoMoneda(calcularTotal('yo'),'USD');
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
