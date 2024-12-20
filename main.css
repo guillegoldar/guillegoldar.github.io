@@ -6,6 +6,18 @@
     text-align: left;
   }
 
+.tdL {
+    text-align: left;
+  }
+
+.tdC {
+    text-align: center;
+  }
+
+.tdR {
+    text-align: right;
+  }
+  
 .gris {
   color: gray;
 }
