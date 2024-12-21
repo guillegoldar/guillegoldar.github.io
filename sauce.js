@@ -6,8 +6,8 @@ const USDCId = '0.0.456858';
 const WBTCId = '0.0.1055483';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
-const tenenciaUSDC = 2675.643;
-const tenenciaWBTC = 0.03014425;
+const tenenciaUSDC = 0;
+const tenenciaWBTC = 0.05742149;
 const tenenciaXSauce = 24030.55;
 const tenenciaDINO = 2859338.17;
 
