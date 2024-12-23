@@ -160,7 +160,7 @@ let refrescar=()=>{
   document.getElementById('tDINO').textContent = formatoNum(parseFloat(tenenciaDINO),0);
   document.getElementById('vDINO').textContent = formatoNum(parseFloat(tenenciaDINO)*parseFloat(document.getElementById('spCotDINO').innerText),0);
   document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
-  document.getElementById('total').textContent = formatoMoneda(calcularTotal('yo'),'USD');
+  document.getElementById('total').textContent = formatoNum(calcularTotal('yo'),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotXSauce').innerText),2);
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotWBTC').innerText),5);
