@@ -7,9 +7,9 @@ const WBTCId = '0.0.1055483';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
 const tenenciaUSDC = 0;
-const tenenciaWBTC = 0.05742149;
+const tenenciaWBTC = 0.02871075;
 const tenenciaXSauce = 0;
-const tenenciaDINO = 3212034.513;
+const tenenciaDINO = 3632720.873;
 
 let obtenerCotHedera = (tokenId) => {
     try {
@@ -162,7 +162,7 @@ let refrescar=()=>{
   document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
   document.getElementById('total').textContent = formatoNum(calcularTotal('yo'),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
-  document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotXSauce').innerText),2);
+  document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotXSauce').innerText),0);
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotWBTC').innerText),5);
   document.getElementById('lea').textContent = formatoMoneda(calcularTotal('lea'),'USD');
   document.getElementById('xLea').textContent = ' (' + Math.trunc(calcularTotal('lea')/44) + 'x)';
