@@ -171,7 +171,7 @@ let refrescar=()=>{
   document.getElementById('pDINO').textContent = ' (' + formatoNum(parseFloat(calcularPesoDINO()),2) +  '%)';
   document.getElementById('tDINO').textContent = formatoNum(parseFloat(tenenciaDINO),0);
   document.getElementById('vDINO').textContent = formatoNum(parseFloat(tenenciaDINO)*parseFloat(document.getElementById('spCotDINO').innerText),0);
-  document.getElementById('BILLS').textContent = formatoNum(parseFloat(document.getElementById('spCotBILLS').innerText),7);
+  document.getElementById('BILLS').textContent = formatoNum(parseFloat(document.getElementById('spCotBILLS').innerText),5);
   document.getElementById('pBILLS').textContent = ' (' + formatoNum(parseFloat(calcularPesoBILLS()),2) +  '%)';
   document.getElementById('tBILLS').textContent = formatoNum(parseFloat(tenenciaBILLS),0);
   document.getElementById('vBILLS').textContent = formatoNum(parseFloat(tenenciaBILLS)*parseFloat(document.getElementById('spCotBILLS').innerText),0);
