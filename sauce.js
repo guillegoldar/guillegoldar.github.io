@@ -8,10 +8,10 @@ const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
 const BILLSId = '0.0.7904837';
 const tenenciaUSDC = 0;
-const tenenciaWBTC = 0.03297918;
+const tenenciaWBTC = 0.03305679;
 const tenenciaXSauce = 0;
 const tenenciaDINO = 3460429.663;
-const tenenciaBILLS = 6451053.162;
+const tenenciaBILLS = 6386542.16213524;
 
 let obtenerCotHedera = (tokenId) => {
     try {
