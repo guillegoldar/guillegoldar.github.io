@@ -9,8 +9,8 @@ const DINOId = '0.0.7907968';
 //const BILLSId = '0.0.7904837';
 const tenenciaUSDC = 0;
 const tenenciaWBTC = 0.1101543;
-const tenenciaXSauce = 32035.809;
-const tenenciaDINO = 1468282.45040934;
+const tenenciaXSauce = 0;
+const tenenciaDINO = 2172647.135;
 //const tenenciaBILLS = 6323155.16213524;
 
 let obtenerCotHedera = (tokenId) => {
