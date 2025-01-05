@@ -11,7 +11,7 @@ const tenenciaUSDC = 0;
 const tenenciaWBTC = 0;
 const tenenciaXSauce = 84340.57;
 const tenenciaDINO = 1329486.436;
-const tenenciaSMACKM = 1149680.494;
+const tenenciaSMACKM = 1174593.412;
 
 let obtenerCotHedera = (tokenId) => {
     try {
