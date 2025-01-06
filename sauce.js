@@ -4,11 +4,13 @@ const apiUrlHedera = 'https://api.saucerswap.finance/tokens/';
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const USDCId = '0.0.456858';
 const WBTCId = '0.0.1055483';
+const HBARId = '0.0.1456986';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
 //const SMACKMId = '0.0.8041571';
 const tenenciaUSDC = 0;
 const tenenciaWBTC = 0;
+const tenenciaHBAR = 9345;
 const tenenciaXSauce = 84340.57;
 const tenenciaDINO = 1329486.436;
 //const tenenciaSMACKM = 1174593.412;
@@ -76,6 +78,7 @@ let obtenerCotDolar=()=> {
 let calcularTotal=(Ind) => {  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
+  let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
   let cotDINO = document.getElementById('spCotDINO').innerText;
 //  let cotSMACKM = document.getElementById('spCotSMACKM').innerText;
@@ -84,6 +87,7 @@ let calcularTotal=(Ind) => {
     part = 0.995;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
+  				   + tenenciaHBAR * cotHBAR				   
 				   + tenenciaXSauce * cotXSauce 
    				   + tenenciaDINO * cotDINO
 //				   + tenenciaSMACKM * cotSMACKM
@@ -103,6 +107,13 @@ let calcularPesoWBTC=() => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let dWBTC = tenenciaWBTC * cotWBTC;
   let peso = (dWBTC * 0.995 * 100) / calcularTotal('yo');
+  return peso;
+};
+
+let calcularPesoHBAR=() => {  
+  let cotHBAR = document.getElementById('spCotHBAR').innerText;  
+  let dHBAR = tenenciaHBAR * cotHBAR;
+  let peso = (dHBAR * 0.995 * 100) / calcularTotal('yo');
   return peso;
 };
 
@@ -146,6 +157,7 @@ let inicializar=()=>{
   //document.getElementById('body').setAttribute('backgroundColor', 'red');
   document.getElementById('spCotUSDC').textContent = obtenerCotHedera(USDCId);
   document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
+  document.getElementById('spCotHBAR').textContent = obtenerCotHedera(HBARId);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
   document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
 //  document.getElementById('spCotSMACKM').textContent =  obtenerCotHedera(SMACKMId);
@@ -163,6 +175,10 @@ let refrescar=()=>{
   document.getElementById('pWBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
   document.getElementById('tWBTC').textContent = formatoNum(parseFloat(tenenciaWBTC),5);
   document.getElementById('vWBTC').textContent = formatoNum(parseFloat(tenenciaWBTC)*parseFloat(document.getElementById('spCotWBTC').innerText),0);
+  document.getElementById('HBAR').textContent = formatoNum(parseFloat(document.getElementById('spCotHBAR').innerText),3);
+  document.getElementById('pHBAR').textContent = ' (' + formatoNum(parseFloat(calcularPesoHBAR()),2) +  '%)';
+  document.getElementById('tHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR),5);
+  document.getElementById('vHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR)*parseFloat(document.getElementById('spCotHBAR').innerText),0);
   document.getElementById('xsauce').textContent = formatoNum(parseFloat(document.getElementById('spCotXSauce').innerText),3);
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('tXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce),0);
