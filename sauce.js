@@ -6,12 +6,12 @@ const USDCId = '0.0.456858';
 const WBTCId = '0.0.1055483';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
-const SMACKMId = '0.0.8041571';
+//const SMACKMId = '0.0.8041571';
 const tenenciaUSDC = 0;
 const tenenciaWBTC = 0;
 const tenenciaXSauce = 84340.57;
 const tenenciaDINO = 1329486.436;
-const tenenciaSMACKM = 1174593.412;
+//const tenenciaSMACKM = 1174593.412;
 
 let obtenerCotHedera = (tokenId) => {
     try {
@@ -78,7 +78,7 @@ let calcularTotal=(Ind) => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
   let cotDINO = document.getElementById('spCotDINO').innerText;
-  let cotSMACKM = document.getElementById('spCotSMACKM').innerText;
+//  let cotSMACKM = document.getElementById('spCotSMACKM').innerText;
   let part = 0.005
   if(Ind=='yo') 
     part = 0.995;
@@ -86,7 +86,7 @@ let calcularTotal=(Ind) => {
   				   + tenenciaWBTC * cotWBTC
 				   + tenenciaXSauce * cotXSauce 
    				   + tenenciaDINO * cotDINO
-				   + tenenciaSMACKM * cotSMACKM
+//				   + tenenciaSMACKM * cotSMACKM
 				)*part
 
   return total;
@@ -119,14 +119,14 @@ let calcularPesoDINO=() => {
   let peso = dDINO * 0.995 * 100 / calcularTotal('yo');
   return peso;
 };
-
+/*
 let calcularPesoSMACKM=() => {  
   let cotSMACKM = document.getElementById('spCotSMACKM').innerText;  
   let dSMACKM = tenenciaSMACKM * cotSMACKM;
   let peso = dSMACKM * 0.995 * 100 / calcularTotal('yo');
   return peso;
 };
-
+*/
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
     minimumFractionDigits: cantDec,
@@ -148,7 +148,7 @@ let inicializar=()=>{
   document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
   document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
-  document.getElementById('spCotSMACKM').textContent =  obtenerCotHedera(SMACKMId);
+//  document.getElementById('spCotSMACKM').textContent =  obtenerCotHedera(SMACKMId);
   document.getElementById('spCotDolar').textContent = obtenerCotDolar();
 }
 
@@ -171,10 +171,10 @@ let refrescar=()=>{
   document.getElementById('pDINO').textContent = ' (' + formatoNum(parseFloat(calcularPesoDINO()),2) +  '%)';
   document.getElementById('tDINO').textContent = formatoNum(parseFloat(tenenciaDINO),0);
   document.getElementById('vDINO').textContent = formatoNum(parseFloat(tenenciaDINO)*parseFloat(document.getElementById('spCotDINO').innerText),0);
-  document.getElementById('SMACKM').textContent = formatoNum(parseFloat(document.getElementById('spCotSMACKM').innerText),5);
+/*  document.getElementById('SMACKM').textContent = formatoNum(parseFloat(document.getElementById('spCotSMACKM').innerText),5);
   document.getElementById('pSMACKM').textContent = ' (' + formatoNum(parseFloat(calcularPesoSMACKM()),2) +  '%)';
   document.getElementById('tSMACKM').textContent = formatoNum(parseFloat(tenenciaSMACKM),0);
-  document.getElementById('vSMACKM').textContent = formatoNum(parseFloat(tenenciaSMACKM)*parseFloat(document.getElementById('spCotSMACKM').innerText),0);
+  document.getElementById('vSMACKM').textContent = formatoNum(parseFloat(tenenciaSMACKM)*parseFloat(document.getElementById('spCotSMACKM').innerText),0);*/
   document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
   document.getElementById('total').textContent = formatoNum(calcularTotal('yo'),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
