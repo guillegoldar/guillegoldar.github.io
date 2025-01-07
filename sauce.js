@@ -177,7 +177,7 @@ let refrescar=()=>{
   document.getElementById('vWBTC').textContent = formatoNum(parseFloat(tenenciaWBTC)*parseFloat(document.getElementById('spCotWBTC').innerText),0);
   document.getElementById('HBAR').textContent = formatoNum(parseFloat(document.getElementById('spCotHBAR').innerText),3);
   document.getElementById('pHBAR').textContent = ' (' + formatoNum(parseFloat(calcularPesoHBAR()),2) +  '%)';
-  document.getElementById('tHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR),5);
+  document.getElementById('tHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR),0);
   document.getElementById('vHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR)*parseFloat(document.getElementById('spCotHBAR').innerText),0);
   document.getElementById('xsauce').textContent = formatoNum(parseFloat(document.getElementById('spCotXSauce').innerText),3);
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
@@ -190,8 +190,7 @@ let refrescar=()=>{
   document.getElementById('PRAWN').textContent = formatoNum(parseFloat(document.getElementById('spCotPRAWN').innerText),5);
   document.getElementById('pPRAWN').textContent = ' (' + formatoNum(parseFloat(calcularPesoPRAWN()),2) +  '%)';
   document.getElementById('tPRAWN').textContent = formatoNum(parseFloat(tenenciaPRAWN),0);
-  document.getElementById('vPRAWN').textContent = formatoNum(parseFloat(tenenciaPRAWN)*parseFloat(document.getElementById('spCotPRAWN').innerText),0);
-  document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
+  document.getElementById('vPRAWN').textContent = formatoNum(parseFloat(tenenciaPRAWN)*parseFloat(document.getElementById('spCotPRAWN').innerText),0);  document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
   document.getElementById('total').textContent = formatoNum(calcularTotal('yo'),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotXSauce').innerText),0);
