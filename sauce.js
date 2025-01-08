@@ -6,14 +6,14 @@ const USDCId = '0.0.456858';
 const WBTCId = '0.0.1055483';
 const HBARId = '0.0.1456986';
 const XSauceId = '0.0.1460200';
-const DINOId = '0.0.7907968';
-const PRAWNId = '0.0.8002934';
-const tenenciaUSDC = 0;
-const tenenciaWBTC = 0;
-const tenenciaHBAR = 6826.229;
-const tenenciaXSauce = 84340.57;
-const tenenciaDINO = 1329486.436;
-const tenenciaPRAWN = 8974752.1684909;
+//const DINOId = '0.0.7907968';
+//const PRAWNId = '0.0.8002934';
+const tenenciaUSDC = 8842.027;
+const tenenciaWBTC = 0.09565715;
+const tenenciaHBAR = 10.485;
+const tenenciaXSauce = 0;
+//const tenenciaDINO = 1329486.436;
+//const tenenciaPRAWN = 8974752.1684909;
 
 let obtenerCotHedera = (tokenId) => {
     try {
@@ -80,8 +80,8 @@ let calcularTotal=(Ind) => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
-  let cotDINO = document.getElementById('spCotDINO').innerText;
-  let cotPRAWN = document.getElementById('spCotPRAWN').innerText;
+//  let cotDINO = document.getElementById('spCotDINO').innerText;
+//  let cotPRAWN = document.getElementById('spCotPRAWN').innerText;
   let part = 0.005
   if(Ind=='yo') 
     part = 0.995;
@@ -89,8 +89,8 @@ let calcularTotal=(Ind) => {
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
 				   + tenenciaXSauce * cotXSauce 
-   				   + tenenciaDINO * cotDINO
-				   + tenenciaPRAWN * cotPRAWN
+//   			   + tenenciaDINO * cotDINO
+//				   + tenenciaPRAWN * cotPRAWN
 				)*part
 
   return total;
@@ -123,7 +123,7 @@ let calcularPesoXSauce=() => {
   let peso = dXSauce * 0.995 * 100 / calcularTotal('yo');
   return peso;
 };
-
+/*
 let calcularPesoDINO=() => {  
   let cotDINO = document.getElementById('spCotDINO').innerText;  
   let dDINO = tenenciaDINO * cotDINO;
@@ -137,7 +137,7 @@ let calcularPesoPRAWN=() => {
   let peso = dPRAWN * 0.995 * 100 / calcularTotal('yo');
   return peso;
 };
-
+*/
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
     minimumFractionDigits: cantDec,
@@ -159,8 +159,8 @@ let inicializar=()=>{
   document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
   document.getElementById('spCotHBAR').textContent = obtenerCotHedera(HBARId);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
-  document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
-  document.getElementById('spCotPRAWN').textContent =  obtenerCotHedera(PRAWNId);
+  //document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
+  //document.getElementById('spCotPRAWN').textContent =  obtenerCotHedera(PRAWNId);
   document.getElementById('spCotDolar').textContent = obtenerCotDolar();
 }
 
@@ -183,14 +183,14 @@ let refrescar=()=>{
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('tXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce),0);
   document.getElementById('vXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce)*parseFloat(document.getElementById('spCotXSauce').innerText),0);
-  document.getElementById('DINO').textContent = formatoNum(parseFloat(document.getElementById('spCotDINO').innerText),5);
+/*  document.getElementById('DINO').textContent = formatoNum(parseFloat(document.getElementById('spCotDINO').innerText),5);
   document.getElementById('pDINO').textContent = ' (' + formatoNum(parseFloat(calcularPesoDINO()),2) +  '%)';
   document.getElementById('tDINO').textContent = formatoNum(parseFloat(tenenciaDINO),0);
   document.getElementById('vDINO').textContent = formatoNum(parseFloat(tenenciaDINO)*parseFloat(document.getElementById('spCotDINO').innerText),0);
   document.getElementById('PRAWN').textContent = formatoNum(parseFloat(document.getElementById('spCotPRAWN').innerText),5);
   document.getElementById('pPRAWN').textContent = ' (' + formatoNum(parseFloat(calcularPesoPRAWN()),2) +  '%)';
   document.getElementById('tPRAWN').textContent = formatoNum(parseFloat(tenenciaPRAWN),0);
-  document.getElementById('vPRAWN').textContent = formatoNum(parseFloat(tenenciaPRAWN)*parseFloat(document.getElementById('spCotPRAWN').innerText),0);  document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');
+  document.getElementById('vPRAWN').textContent = formatoNum(parseFloat(tenenciaPRAWN)*parseFloat(document.getElementById('spCotPRAWN').innerText),0);  document.getElementById('dolar').textContent = formatoMoneda(parseFloat(document.getElementById('spCotDolar').innerText),'ARS');*/
   document.getElementById('total').textContent = formatoNum(calcularTotal('yo'),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotXSauce').innerText),0);
