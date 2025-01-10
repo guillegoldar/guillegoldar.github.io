@@ -7,11 +7,11 @@ const WBTCId = '0.0.1055483';
 const HBARId = '0.0.1456986';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
-const tenenciaUSDC = 16082.048;
-const tenenciaWBTC = 0;
-const tenenciaHBAR = 25.354;
+const tenenciaUSDC = 0;
+const tenenciaWBTC = 0.10956;
+const tenenciaHBAR = 23.395;
 const tenenciaXSauce = 0;
-const tenenciaDINO = 0;
+const tenenciaDINO = 1235959.261;
 
 let obtenerCotHedera = (tokenId) => {
     try {
