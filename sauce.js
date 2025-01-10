@@ -7,11 +7,11 @@ const WBTCId = '0.0.1055483';
 const HBARId = '0.0.1456986';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
-const tenenciaUSDC = 0;
-const tenenciaWBTC = 0.09565715;
-const tenenciaHBAR = 26.15;
+const tenenciaUSDC = 16082.048;
+const tenenciaWBTC = 0;
+const tenenciaHBAR = 25.354;
 const tenenciaXSauce = 0;
-const tenenciaDINO = 1849223.626;
+const tenenciaDINO = 0;
 
 let obtenerCotHedera = (tokenId) => {
     try {
@@ -73,57 +73,53 @@ let obtenerCotDolar=()=> {
   }
 };
 
-let calcularTotal=(Ind) => {  
+let calcularTotal=() => {  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
   let cotDINO = document.getElementById('spCotDINO').innerText;
-  let part = 0.005
-  if(Ind=='yo') 
-    part = 0.995;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
 				   + tenenciaXSauce * cotXSauce 
      			   + tenenciaDINO * cotDINO
-				)*part
-
+				)
   return total;
 };
 
 let calcularPesoUSDC=() => {  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
   let dUSDC = tenenciaUSDC * cotUSDC;
-  let peso = (dUSDC * 0.995 * 100) / calcularTotal('yo');
+  let peso = (dUSDC) / calcularTotal();
   return peso;
 };
 
 let calcularPesoWBTC=() => {  
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let dWBTC = tenenciaWBTC * cotWBTC;
-  let peso = (dWBTC * 0.995 * 100) / calcularTotal('yo');
+  let peso = dWBTC / calcularTotal();
   return peso;
 };
 
 let calcularPesoHBAR=() => {  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;  
   let dHBAR = tenenciaHBAR * cotHBAR;
-  let peso = (dHBAR * 0.995 * 100) / calcularTotal('yo');
+  let peso = dHBAR / calcularTotal();
   return peso;
 };
 
 let calcularPesoXSauce=() => {  
   let cotXSauce = document.getElementById('spCotXSauce').innerText;  
   let dXSauce = tenenciaXSauce * cotXSauce;
-  let peso = dXSauce * 0.995 * 100 / calcularTotal('yo');
+  let peso = dXSauce / calcularTotal();
   return peso;
 };
 
 let calcularPesoDINO=() => {  
   let cotDINO = document.getElementById('spCotDINO').innerText;  
   let dDINO = tenenciaDINO * cotDINO;
-  let peso = dDINO * 0.995 * 100 / calcularTotal('yo');
+  let peso = dDINO / calcularTotal();
   return peso;
 };
 
@@ -149,7 +145,6 @@ let inicializar=()=>{
   document.getElementById('spCotHBAR').textContent = obtenerCotHedera(HBARId);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
   document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
-  document.getElementById('spCotDolar').textContent = obtenerCotDolar();
 }
 
 
@@ -175,12 +170,9 @@ let refrescar=()=>{
   document.getElementById('pDINO').textContent = ' (' + formatoNum(parseFloat(calcularPesoDINO()),2) +  '%)';
   document.getElementById('tDINO').textContent = formatoNum(parseFloat(tenenciaDINO),0);
   document.getElementById('vDINO').textContent = formatoNum(parseFloat(tenenciaDINO)*parseFloat(document.getElementById('spCotDINO').innerText),0);
-  document.getElementById('total').textContent = formatoNum(calcularTotal('yo'),0);
-  document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal('yo')/5000) + 'x)';
-  document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotXSauce').innerText),0);
-  document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal('yo')/document.getElementById('spCotWBTC').innerText),5);
-  document.getElementById('lea').textContent = formatoMoneda(calcularTotal('lea'),'USD');
-  document.getElementById('xLea').textContent = ' (' + Math.trunc(calcularTotal('lea')/44) + 'x)';
-  document.getElementById('pLea').textContent = formatoMoneda(calcularTotal('lea')*document.getElementById('spCotDolar').innerText,'ARS');
+  document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
+  document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
+  document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
+  document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
 }
 
