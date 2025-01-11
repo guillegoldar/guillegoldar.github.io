@@ -91,35 +91,35 @@ let calcularTotal=() => {
 let calcularPesoUSDC=() => {  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
   let dUSDC = tenenciaUSDC * cotUSDC;
-  let peso = (dUSDC) / calcularTotal();
+  let peso = dUSDC * 100 / calcularTotal();
   return peso;
 };
 
 let calcularPesoWBTC=() => {  
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let dWBTC = tenenciaWBTC * cotWBTC;
-  let peso = dWBTC / calcularTotal();
+  let peso = dWBTC * 100 / calcularTotal();
   return peso;
 };
 
 let calcularPesoHBAR=() => {  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;  
   let dHBAR = tenenciaHBAR * cotHBAR;
-  let peso = dHBAR / calcularTotal();
+  let peso = dHBAR * 100 / calcularTotal();
   return peso;
 };
 
 let calcularPesoXSauce=() => {  
   let cotXSauce = document.getElementById('spCotXSauce').innerText;  
   let dXSauce = tenenciaXSauce * cotXSauce;
-  let peso = dXSauce / calcularTotal();
+  let peso = dXSauce * 100 / calcularTotal();
   return peso;
 };
 
 let calcularPesoDINO=() => {  
   let cotDINO = document.getElementById('spCotDINO').innerText;  
   let dDINO = tenenciaDINO * cotDINO;
-  let peso = dDINO / calcularTotal();
+  let peso = dDINO * 100 / calcularTotal();
   return peso;
 };
 
