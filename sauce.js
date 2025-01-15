@@ -8,9 +8,9 @@ const HBARId = '0.0.1456986';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
 const tenenciaUSDC = 0;
-const tenenciaWBTC = 0.10956;
-const tenenciaHBAR = 23.395;
-const tenenciaXSauce = 0;
+const tenenciaWBTC = 0;
+const tenenciaHBAR = 16836.007;
+const tenenciaXSauce = 43394.673;
 const tenenciaDINO = 1235959.261;
 
 let obtenerCotHedera = (tokenId) => {
