@@ -10,10 +10,10 @@ const DINOId = '0.0.7907968';
 const IVYId = '0.0.8105204';
 const tenenciaUSDC = 0;
 const tenenciaWBTC = 0;
-const tenenciaHBAR = 16836.007;
+const tenenciaHBAR = 16833.686;
 const tenenciaXSauce = 43394.673;
-const tenenciaDINO = 679303.55;
-const tenenciaIVY = 640131.24;
+const tenenciaDINO = 634303.55;
+const tenenciaIVY = 689264.85;
 
 let obtenerCotHedera = (tokenId) => {
     try {
