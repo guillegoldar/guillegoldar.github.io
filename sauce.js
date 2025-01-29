@@ -7,11 +7,13 @@ const WBTCId = '0.0.1055483';
 const HBARId = '0.0.1456986';
 const XSauceId = '0.0.1460200';
 const DINOId = '0.0.7907968';
+const IVYId = '0.0.8105204';
 const tenenciaUSDC = 0;
 const tenenciaWBTC = 0;
 const tenenciaHBAR = 16836.007;
 const tenenciaXSauce = 43394.673;
-const tenenciaDINO = 1235959.261;
+const tenenciaDINO = 679303.55;
+const tenenciaIVY = 640131.24;
 
 let obtenerCotHedera = (tokenId) => {
     try {
@@ -79,11 +81,13 @@ let calcularTotal=() => {
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
   let cotDINO = document.getElementById('spCotDINO').innerText;
+  let cotIVY = document.getElementById('spCotIVY').innerText;  
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
 				   + tenenciaXSauce * cotXSauce 
      			   + tenenciaDINO * cotDINO
+				   + tenenciaIVY * cotIVY
 				)
   return total;
 };
@@ -123,6 +127,13 @@ let calcularPesoDINO=() => {
   return peso;
 };
 
+let calcularPesoIVY=() => {  
+  let cotIVY = document.getElementById('spCotIVY').innerText;  
+  let dIVY = tenenciaIVY * cotIVY;
+  let peso = dIVY * 100 / calcularTotal();
+  return peso;
+};
+
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
     minimumFractionDigits: cantDec,
@@ -145,6 +156,7 @@ let inicializar=()=>{
   document.getElementById('spCotHBAR').textContent = obtenerCotHedera(HBARId);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
   document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
+  document.getElementById('spCotIVY').textContent =  obtenerCotHedera(IVYId);
 }
 
 
@@ -170,6 +182,10 @@ let refrescar=()=>{
   document.getElementById('pDINO').textContent = ' (' + formatoNum(parseFloat(calcularPesoDINO()),2) +  '%)';
   document.getElementById('tDINO').textContent = formatoNum(parseFloat(tenenciaDINO),0);
   document.getElementById('vDINO').textContent = formatoNum(parseFloat(tenenciaDINO)*parseFloat(document.getElementById('spCotDINO').innerText),0);
+  document.getElementById('IVY').textContent = formatoNum(parseFloat(document.getElementById('spCotIVY').innerText),5);
+  document.getElementById('pIVY').textContent = ' (' + formatoNum(parseFloat(calcularPesoIVY()),2) +  '%)';
+  document.getElementById('tIVY').textContent = formatoNum(parseFloat(tenenciaIVY),0);
+  document.getElementById('vIVY').textContent = formatoNum(parseFloat(tenenciaIVY)*parseFloat(document.getElementById('spCotIVY').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
