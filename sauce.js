@@ -36,6 +36,7 @@ let obtenerCotHedera = (Id) => {
           alert('Error fetching data Hedera (1):' + xhr.statusText);
       }
       alert(resultado.data.attributes);
+      alert('1');
       let cot = resultado.base_token_price_usd;
       return cot;
     }
