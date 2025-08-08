@@ -85,6 +85,8 @@ let obtenerCotDolar=()=> {
 
 let calcularTotal=() => {  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
+  let cotBTC = document.getElementById('spCotBTC').innerText;  
+  let cotETH = document.getElementById('spCotETH').innerText;    
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
@@ -113,6 +115,20 @@ let calcularPesoWBTC=() => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let dWBTC = tenenciaWBTC * cotWBTC;
   let peso = dWBTC * 100 / calcularTotal();
+  return peso;
+};
+
+let calcularPesoBTC=() => {  
+  let cotBTC = document.getElementById('spCotBTC').innerText;  
+  let dBTC = tenenciaBTC * cotBTC;
+  let peso = dBTC * 100 / calcularTotal();
+  return peso;
+};
+
+let calcularPesoETH=() => {  
+  let cotETH = document.getElementById('spCotETH').innerText;  
+  let dETH = tenenciaETH * cotETH;
+  let peso = dETH * 100 / calcularTotal();
   return peso;
 };
 
@@ -171,6 +187,7 @@ let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
   document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
+  document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
   //document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
@@ -193,6 +210,10 @@ let refrescar=()=>{
   document.getElementById('pWBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
   document.getElementById('tWBTC').textContent = formatoNum(parseFloat(tenenciaWBTC),5);
   document.getElementById('vWBTC').textContent = formatoNum(parseFloat(tenenciaWBTC)*parseFloat(document.getElementById('spCotWBTC').innerText),0);
+  document.getElementById('ETH').textContent = formatoNum(parseFloat(document.getElementById('spCotETH').innerText),0);
+  document.getElementById('pETH').textContent = ' (' + formatoNum(parseFloat(calcularPesoETH()),2) +  '%)';
+  document.getElementById('tETH').textContent = formatoNum(parseFloat(tenenciaETH),5);
+  document.getElementById('vETH').textContent = formatoNum(parseFloat(tenenciaETH)*parseFloat(document.getElementById('spCotETH').innerText),0);
   document.getElementById('HBAR').textContent = formatoNum(parseFloat(document.getElementById('spCotHBAR').innerText),3);
   document.getElementById('pHBAR').textContent = ' (' + formatoNum(parseFloat(calcularPesoHBAR()),2) +  '%)';
   document.getElementById('tHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR),0);
