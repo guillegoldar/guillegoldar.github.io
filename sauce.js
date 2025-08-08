@@ -156,7 +156,8 @@ let calcularPesoGIB=() => {
 let calcularPesoDosa=() => {  
   let cotDosa = document.getElementById('spCotDosa').innerText;  
   let dDosa = tenenciaDosa * cotDosa;
-  let peso = Dosa * 100 / calcularTotal();
+  let peso = dDosa * 100 / calcularTotal();
+  alert(peso);
   return peso;
 };
 
