@@ -35,8 +35,6 @@ let obtenerCotHedera = (Id) => {
       } else {
           alert('Error fetching data Hedera (1):' + xhr.statusText);
       }
-      alert(resultado.data.attributes.base_token_price_usd);
-      alert('2');
       let cot = resultado.data.attributes.base_token_price_usd;
       return cot;
     }
@@ -92,16 +90,16 @@ let calcularTotal=() => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
-  //let cotDINO = document.getElementById('spCotDINO').innerText;
-  //let cotIVY = document.getElementById('spCotIVY').innerText;  
-  //let cotLeemon = document.getElementById('spCotLeemon').innerText;
+  let cotGIB = document.getElementById('spCotGIB').innerText;
+  let cotDosa = document.getElementById('spCotDosa').innerText;  
+  let cotCKNBLZ = document.getElementById('spCotCKNBLZ').innerText;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
-				   + tenenciaXSauce * cotXSauce 
-     			   //+ tenenciaDINO * cotDINO
-				   //+ tenenciaIVY * cotIVY
-				   //+ tenenciaLeemon * cotLeemon
+				     + tenenciaXSauce * cotXSauce 
+     			   + tenenciaGIB * cotGIB
+				     + tenenciaDosa * cotDosa
+				     + tenenciaCKNBLZ * cotCKNBLZ
 				)
   return total;
 };
@@ -147,28 +145,28 @@ let calcularPesoXSauce=() => {
   let peso = dXSauce * 100 / calcularTotal();
   return peso;
 };
-/*
-let calcularPesoDINO=() => {  
-  let cotDINO = document.getElementById('spCotDINO').innerText;  
-  let dDINO = tenenciaDINO * cotDINO;
-  let peso = dDINO * 100 / calcularTotal();
+
+let calcularPesoGIB=() => {  
+  let cotGIB = document.getElementById('spCotGIB').innerText;  
+  let dGIB = tenenciaGIB * cotGIB;
+  let peso = dGIB * 100 / calcularTotal();
   return peso;
 };
 
-let calcularPesoIVY=() => {  
-  let cotIVY = document.getElementById('spCotIVY').innerText;  
-  let dIVY = tenenciaIVY * cotIVY;
-  let peso = dIVY * 100 / calcularTotal();
+let calcularPesoDosa=() => {  
+  let cotDosa = document.getElementById('spCotDosa').innerText;  
+  let dDosa = tenenciaDosa * cotDosa;
+  let peso = Dosa * 100 / calcularTotal();
   return peso;
 };
 
-let calcularPesoLeemon=() => {  
-  let cotLeemon = document.getElementById('spCotLeemon').innerText;  
-  let dLeemon = tenenciaLeemon * cotLeemon;
-  let peso = dLeemon * 100 / calcularTotal();
+let calcularPesoCKNBLZ=() => {  
+  let cotCKNBLZ = document.getElementById('spCotCKNBLZ').innerText;  
+  let dCKNBLZ = tenenciaCKNBLZ * cotCKNBLZ;
+  let peso = dCKNBLZ * 100 / calcularTotal();
   return peso;
 };
-*/
+
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
@@ -192,9 +190,9 @@ let inicializar=()=>{
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
-  //document.getElementById('spCotDINO').textContent =  obtenerCotHedera(DINOId);
-  //document.getElementById('spCotIVY').textContent =  obtenerCotHedera(IVYId);
-  //document.getElementById('spCotLeemon').textContent =  obtenerCotHedera(LeemonId);
+  document.getElementById('spCotGIB').textContent =  obtenerCotHedera(GIBId);
+  document.getElementById('spCotDosa').textContent =  obtenerCotHedera(DosaId);
+  document.getElementById('spCotCKNBLZ').textContent =  obtenerCotHedera(CKNBLZId);
 }
 
 
@@ -224,18 +222,18 @@ let refrescar=()=>{
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('tXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce),0);
   document.getElementById('vXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce)*parseFloat(document.getElementById('spCotXSauce').innerText),0);
-/*  document.getElementById('DINO').textContent = formatoNum(parseFloat(document.getElementById('spCotDINO').innerText),5);
-  document.getElementById('pDINO').textContent = ' (' + formatoNum(parseFloat(calcularPesoDINO()),2) +  '%)';
-  document.getElementById('tDINO').textContent = formatoNum(parseFloat(tenenciaDINO),0);
-  document.getElementById('vDINO').textContent = formatoNum(parseFloat(tenenciaDINO)*parseFloat(document.getElementById('spCotDINO').innerText),0);
-  document.getElementById('IVY').textContent = formatoNum(parseFloat(document.getElementById('spCotIVY').innerText),5);
-  document.getElementById('pIVY').textContent = ' (' + formatoNum(parseFloat(calcularPesoIVY()),2) +  '%)';
-  document.getElementById('tIVY').textContent = formatoNum(parseFloat(tenenciaIVY),0);
-  document.getElementById('vIVY').textContent = formatoNum(parseFloat(tenenciaIVY)*parseFloat(document.getElementById('spCotIVY').innerText),0);
-  document.getElementById('Leemon').textContent = formatoNum(parseFloat(document.getElementById('spCotLeemon').innerText),5);
-  document.getElementById('pLeemon').textContent = ' (' + formatoNum(parseFloat(calcularPesoLeemon()),2) +  '%)';
-  document.getElementById('tLeemon').textContent = formatoNum(parseFloat(tenenciaLeemon),0);
-  document.getElementById('vLeemon').textContent = formatoNum(parseFloat(tenenciaLeemon)*parseFloat(document.getElementById('spCotLeemon').innerText),0);*/
+  document.getElementById('GIB').textContent = formatoNum(parseFloat(document.getElementById('spCotGIB').innerText),5);
+  document.getElementById('pGIB').textContent = ' (' + formatoNum(parseFloat(calcularPesoGIB()),2) +  '%)';
+  document.getElementById('tGIB').textContent = formatoNum(parseFloat(tenenciaGIB),0);
+  document.getElementById('vGIB').textContent = formatoNum(parseFloat(tenenciaGIB)*parseFloat(document.getElementById('spCotGIB').innerText),0);
+  document.getElementById('Dosa').textContent = formatoNum(parseFloat(document.getElementById('spCotDosa').innerText),5);
+  document.getElementById('pDosa').textContent = ' (' + formatoNum(parseFloat(calcularPesoDosa()),2) +  '%)';
+  document.getElementById('tDosa').textContent = formatoNum(parseFloat(tenenciaDosa),0);
+  document.getElementById('vDosa').textContent = formatoNum(parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText),0);
+  document.getElementById('CKNBLZ').textContent = formatoNum(parseFloat(document.getElementById('spCotCKNBLZ').innerText),5);
+  document.getElementById('pCKNBLZ').textContent = ' (' + formatoNum(parseFloat(calcularPesoCKNBLZ()),2) +  '%)';
+  document.getElementById('tCKNBLZ').textContent = formatoNum(parseFloat(tenenciaCKNBLZ),0);
+  document.getElementById('vCKNBLZ').textContent = formatoNum(parseFloat(tenenciaCKNBLZ)*parseFloat(document.getElementById('spCotCKNBLZ').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
