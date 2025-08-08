@@ -157,7 +157,6 @@ let calcularPesoDosa=() => {
   let cotDosa = document.getElementById('spCotDosa').innerText;  
   let dDosa = tenenciaDosa * cotDosa;
   let peso = dDosa * 100 / calcularTotal();
-  alert(peso);
   return peso;
 };
 
