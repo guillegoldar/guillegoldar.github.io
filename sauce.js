@@ -25,6 +25,7 @@ const tenenciaCKNBLZ = 3414625.047;
 
 let obtenerCotHedera = (Id) => {
     try {
+      alert(Id);
       let resultado;
       const xhr = new XMLHttpRequest();
       xhr.open('GET', apiUrlHedera+Id, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
@@ -33,13 +34,13 @@ let obtenerCotHedera = (Id) => {
           const data = JSON.parse(xhr.responseText);
           resultado = data;
       } else {
-          alert('Error fetching data Hedera (1):', xhr.statusText);
+          alert('Error fetching data Hedera (1):' + xhr.statusText);
       }
       let cot = resultado.base_token_price_usd;
       return cot;
     }
     catch(error) {
-      alert('Error fetching data Hedera (2):', error);
+      alert('Error fetching data Hedera (2):' + error);
     }
 };
 
