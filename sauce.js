@@ -241,6 +241,6 @@ let refrescar=()=>{
   document.getElementById('totalMeme').textContent = formatoNum((parseFloat(tenenciaGIB)*parseFloat(document.getElementById('spCotGIB').innerText)
                                                      +parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText)
                                                      +parseFloat(tenenciaCKNBLZ)*parseFloat(document.getElementById('spCotCKNBLZ').innerText))
-                                                     /parseFloat(calcularTotal())*100,2);
+                                                     /parseFloat(calcularTotal())*100,2) && ' %';
 }
 
