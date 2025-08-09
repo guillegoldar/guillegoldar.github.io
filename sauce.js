@@ -238,6 +238,6 @@ let refrescar=()=>{
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
-  document.getElementById('totalMeme').textContent = formatoNum((document.getElementById('vGIB').textContent+document.getElementById('vDosa').textContent+document.getElementById('vCKNBLZ').textContent)/parseFloat(calcularTotal()),2);
+  document.getElementById('totalMeme').textContent = formatoNum((document.getElementById('vGIB').textContent+document.getElementById('vDosa').textContent+document.getElementById('vCKNBLZ').textContent)),2);
 }
 
