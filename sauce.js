@@ -18,9 +18,9 @@ const tenenciaWBTC = 0;
 const tenenciaETH = 0;
 const tenenciaHBAR = 111.008;
 const tenenciaXSauce = 67956.342
-const tenenciaGIB = 0;
+const tenenciaGIB = 19571.662;
 const tenenciaDosa = 2534208.08;
-const tenenciaCKNBLZ = 3414625.047;
+const tenenciaCKNBLZ = 2440608.283;
 //const tenenciaBob = 3507191.584;
 
 let obtenerCotHedera = (Id) => {
@@ -238,5 +238,6 @@ let refrescar=()=>{
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
+  document.getElementById('totalMeme').textContent = formatoNum((document.getElementById('vGIB').textContent+document.getElementById('vDosa').textContent+document.getElementById('vCKNBLZ').textContent)/parseFloat(calcularTotal()),2);
 }
 
