@@ -33,13 +33,15 @@ let obtenerCotHedera = (Id) => {
           const data = JSON.parse(xhr.responseText);
           resultado = data;
       } else {
-          alert('Error fetching data Hedera (1):' + xhr.statusText);
+          console.error('Error fetching data Hedera (1):' + xhr.statusText);
+          return 0;
       }
       let cot = resultado.data.attributes.base_token_price_usd;
       return cot;
     }
     catch(error) {
-      alert('Error fetching data Hedera (2):' + error);
+      console.error('Error fetching data Hedera (2):' + error);
+      return 0;
     }
 };
 
