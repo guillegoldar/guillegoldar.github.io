@@ -93,7 +93,7 @@ let calcularTotal=() => {
   let cotGIB = document.getElementById('spCotGIB').innerText;
   let cotDosa = document.getElementById('spCotDosa').innerText;  
   let cotCKNBLZ = document.getElementById('spCotCKNBLZ').innerText;
-  let cotWhatZ = document.getElementById('spCotWhat').innerText;
+  let cotWhat = document.getElementById('spCotWhat').innerText;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
@@ -243,12 +243,10 @@ let refrescar=()=>{
   document.getElementById('pCKNBLZ').textContent = ' (' + formatoNum(parseFloat(calcularPesoCKNBLZ()),2) +  '%)';
   document.getElementById('tCKNBLZ').textContent = formatoNum(parseFloat(tenenciaCKNBLZ),0);
   document.getElementById('vCKNBLZ').textContent = formatoNum(parseFloat(tenenciaCKNBLZ)*parseFloat(document.getElementById('spCotCKNBLZ').innerText),0);
-
   document.getElementById('What').textContent = formatoNum(parseFloat(document.getElementById('spCotWhat').innerText),5);
   document.getElementById('pWhat').textContent = ' (' + formatoNum(parseFloat(calcularPesoWhat()),2) +  '%)';
   document.getElementById('tWhat').textContent = formatoNum(parseFloat(tenenciaWhat),0);
   document.getElementById('vWhat').textContent = formatoNum(parseFloat(tenenciaWhat)*parseFloat(document.getElementById('spCotWhat').innerText),0);  
-
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
