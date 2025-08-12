@@ -16,11 +16,11 @@ const tenenciaUSDC = 0;
 const tenenciaBTC = 0;
 const tenenciaWBTC = 0;
 const tenenciaETH = 0;
-const tenenciaHBAR = 41.882;
+const tenenciaHBAR = 41.346;
 const tenenciaXSauce = 67956.342
 const tenenciaGIB = 0;
-const tenenciaDosa = 2099878.562;
-const tenenciaCKNBLZ = 2639163.911;
+const tenenciaDosa = 2000000;
+const tenenciaCKNBLZ = 3481757.467;
 const tenenciaHert = 1322128.298;
 
 let obtenerCotHedera = (Id) => {
