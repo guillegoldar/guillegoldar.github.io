@@ -21,7 +21,7 @@ const tenenciaXSauce = 67956.342
 const tenenciaGIB = 0;
 const tenenciaDosa = 2434208.08;
 const tenenciaCKNBLZ = 709785.283;
-const tenenciaHert = 908785.258;
+const tenenciaHert = 908332.258;
 
 let obtenerCotHedera = (Id) => {
     try {
