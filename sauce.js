@@ -45,6 +45,29 @@ let obtenerCotHedera = (Id) => {
     }
 };
 
+let obtenerPorHedera = (Id, temp) => {
+    try {
+      //vpa
+      let resultado;
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', apiUrlHedera+Id, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
+      xhr.send();
+      if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          resultado = data;
+      } else {
+          console.error('Error fetching data porcentaje Hedera (1):' + xhr.statusText);
+          return 0;
+      }
+      let cot = resultado.data.attributes.price_change_percentage[temp]);
+      return cot;
+    }
+    catch(error) {
+      console.error('Error fetching data porcentaje Hedera (2):' + error);
+      return 0;
+    }
+};
+
 let obtenerCotBitget = (symbol) => {
     try {
       let resultado;
@@ -204,6 +227,11 @@ let inicializar=()=>{
   document.getElementById('spCotDosa').textContent =  obtenerCotHedera(DosaId);
   document.getElementById('spCotCKNBLZ').textContent =  obtenerCotHedera(CKNBLZId);
   document.getElementById('spCotHert').textContent =  obtenerCotHedera(HertId);
+
+  document.getElementById('m5XSauce').textContent =  obtenerPorHedera(XSauceId, 'm5');
+  document.getElementById('h1XSauce').textContent =  obtenerPorHedera(XSauceId, 'h1');
+  document.getElementById('h24XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6');
+  document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h24');
 }
 
 
