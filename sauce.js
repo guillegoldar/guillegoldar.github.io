@@ -227,11 +227,27 @@ let inicializar=()=>{
   document.getElementById('spCotDosa').textContent =  obtenerCotHedera(DosaId);
   document.getElementById('spCotCKNBLZ').textContent =  obtenerCotHedera(CKNBLZId);
   document.getElementById('spCotHert').textContent =  obtenerCotHedera(HertId);
+  document.getElementById('m5XSauce').textContent =  formatoNum(obtenerPorHedera(XSauceId, 'm5'),1);
+  document.getElementById('h1XSauce').textContent =  formatoNum(obtenerPorHedera(XSauceId, 'h1'),1);
+  document.getElementById('h24XSauce').textContent =  formatoNum(obtenerPorHedera(XSauceId, 'h6',1));
+  document.getElementById('h6XSauce').textContent =  formatoNum(obtenerPorHedera(XSauceId, 'h24'),1);
+  document.getElementById('m5GIB').textContent =  formatoNum(obtenerPorHedera(GIBId, 'm5'),1);
+  document.getElementById('h1GIB').textContent =  formatoNum(obtenerPorHedera(GIBId, 'h1'),1);
+  document.getElementById('h24GIB').textContent =  formatoNum(obtenerPorHedera(GIBId, 'h6',1));
+  document.getElementById('h6GIB').textContent =  formatoNum(obtenerPorHedera(GIBId, 'h24'),1);
+  document.getElementById('m5Dosa').textContent =  formatoNum(obtenerPorHedera(DosaId, 'm5'),1);
+  document.getElementById('h1Dosa').textContent =  formatoNum(obtenerPorHedera(DosaId, 'h1'),1);
+  document.getElementById('h24Dosa').textContent =  formatoNum(obtenerPorHedera(DosaId, 'h6',1));
+  document.getElementById('h6Dosa').textContent =  formatoNum(obtenerPorHedera(XSauceId, 'h24'),1);
+  document.getElementById('m5CKNBLZ').textContent =  formatoNum(obtenerPorHedera(CKNBLZId, 'm5'),1);
+  document.getElementById('h1CKNBLZ').textContent =  formatoNum(obtenerPorHedera(CKNBLZId, 'h1'),1);
+  document.getElementById('h24CKNBLZ').textContent =  formatoNum(obtenerPorHedera(CKNBLZId, 'h6',1));
+  document.getElementById('h6CKNBLZ').textContent =  formatoNum(obtenerPorHedera(CKNBLZId, 'h24'),1);
+  document.getElementById('m5Hert').textContent =  formatoNum(obtenerPorHedera(HertId, 'm5'),1);
+  document.getElementById('h1Hert').textContent =  formatoNum(obtenerPorHedera(HertId, 'h1'),1);
+  document.getElementById('h24Hert').textContent =  formatoNum(obtenerPorHedera(HertId, 'h6',1));
+  document.getElementById('h6Hert').textContent =  formatoNum(obtenerPorHedera(HertId, 'h24'),1);
 
-  document.getElementById('m5XSauce').textContent =  obtenerPorHedera(XSauceId, 'm5');
-  document.getElementById('h1XSauce').textContent =  obtenerPorHedera(XSauceId, 'h1');
-  document.getElementById('h24XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6');
-  document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h24');
 }
 
 
