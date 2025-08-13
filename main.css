@@ -30,6 +30,7 @@
 .seccionPrincipal {
   align-items: center;
   color:#DDDDDD;
+  border: 4px;
 }
 
 .oculto {

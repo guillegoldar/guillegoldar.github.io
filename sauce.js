@@ -75,7 +75,7 @@ let obtenerPorHedera = (Id, temp) => {
           return 0;
       }
       let cot = resultado.data.attributes.price_change_percentage[temp];
-      return formatoNum(cot.replace('.',','),1);
+      return formatoNum(parseFloat(cot),1);
     }
     catch(error) {
       console.error('Error fetching data porcentaje Hedera (2):' + error);
