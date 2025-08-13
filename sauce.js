@@ -233,11 +233,10 @@ let inicializar=()=>{
   document.getElementById('h24GIB').textContent =  obtenerPorHedera(GIBId, 'h24');
   document.getElementById('h6Dosa').textContent =  obtenerPorHedera(DosaId, 'h6');
   document.getElementById('h24Dosa').textContent =  obtenerPorHedera(DosaId, 'h24');
-  document.getElementById('h6CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h6');
-  document.getElementById('h24CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h24');
   document.getElementById('h6Hert').textContent =  obtenerPorHedera(HertId, 'h6');
   document.getElementById('h24Hert').textContent =  obtenerPorHedera(HertId, 'h24');
-
+  document.getElementById('h6CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h6');
+  document.getElementById('h24CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h24');
 }
 
 
