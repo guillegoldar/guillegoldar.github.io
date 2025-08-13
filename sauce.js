@@ -229,23 +229,23 @@ let inicializar=()=>{
   document.getElementById('spCotHert').textContent =  obtenerCotHedera(HertId);
   document.getElementById('m5XSauce').textContent =  obtenerPorHedera(XSauceId, 'm5');
   document.getElementById('h1XSauce').textContent =  obtenerPorHedera(XSauceId, 'h1');
-  document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6',1));
+  document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6');
   document.getElementById('h24XSauce').textContent =  obtenerPorHedera(XSauceId, 'h24');
   document.getElementById('m5GIB').textContent =  obtenerPorHedera(GIBId, 'm5');
   document.getElementById('h1GIB').textContent =  obtenerPorHedera(GIBId, 'h1');
-  document.getElementById('h6GIB').textContent =  obtenerPorHedera(GIBId, 'h6',1));
+  document.getElementById('h6GIB').textContent =  obtenerPorHedera(GIBId, 'h6');
   document.getElementById('h24GIB').textContent =  obtenerPorHedera(GIBId, 'h24');
   document.getElementById('m5Dosa').textContent =  obtenerPorHedera(DosaId, 'm5');
   document.getElementById('h1Dosa').textContent =  obtenerPorHedera(DosaId, 'h1');
-  document.getElementById('h6Dosa').textContent =  obtenerPorHedera(DosaId, 'h6',1));
+  document.getElementById('h6Dosa').textContent =  obtenerPorHedera(DosaId, 'h6');
   document.getElementById('h24Dosa').textContent =  obtenerPorHedera(DosaId, 'h24');
   document.getElementById('m5CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'm5');
   document.getElementById('h1CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h1');
-  document.getElementById('h6CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h6',1));
+  document.getElementById('h6CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h6');
   document.getElementById('h24CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h24');
   document.getElementById('m5Hert').textContent =  obtenerPorHedera(HertId, 'm5');
   document.getElementById('h1Hert').textContent =  obtenerPorHedera(HertId, 'h1');
-  document.getElementById('h6Hert').textContent =  obtenerPorHedera(HertId, 'h6',1));
+  document.getElementById('h6Hert').textContent =  obtenerPorHedera(HertId, 'h6');
   document.getElementById('h24Hert').textContent =  obtenerPorHedera(HertId, 'h24');
 
 }
