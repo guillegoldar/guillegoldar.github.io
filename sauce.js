@@ -59,7 +59,7 @@ let obtenerPorHedera = (Id, temp) => {
           console.error('Error fetching data porcentaje Hedera (1):' + xhr.statusText);
           return 0;
       }
-      let cot = resultado.data.attributes.price_change_percentage[temp]);
+      let cot = resultado.data.attributes.price_change_percentage[temp];
       return cot;
     }
     catch(error) {
