@@ -238,7 +238,7 @@ let inicializar=()=>{
   document.getElementById('m5Dosa').textContent =  obtenerPorHedera(DosaId, 'm5');
   document.getElementById('h1Dosa').textContent =  obtenerPorHedera(DosaId, 'h1');
   document.getElementById('h6Dosa').textContent =  obtenerPorHedera(DosaId, 'h6',1));
-  document.getElementById('h24Dosa').textContent =  obtenerPorHedera(XSauceId, 'h24');
+  document.getElementById('h24Dosa').textContent =  obtenerPorHedera(DosaId, 'h24');
   document.getElementById('m5CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'm5');
   document.getElementById('h1CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h1');
   document.getElementById('h6CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h6',1));
