@@ -30,6 +30,11 @@
 .seccionPrincipal {
   align-items: center;
   color:#DDDDDD;
+}
+
+.seccionPorcentajes {
+  align-items: center;
+  color:#DDDDDD;
   border: 4px;
 }
 
