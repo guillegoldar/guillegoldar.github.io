@@ -227,6 +227,7 @@ let inicializar=()=>{
   document.getElementById('spCotDosa').textContent =  obtenerCotHedera(DosaId);
   document.getElementById('spCotCKNBLZ').textContent =  obtenerCotHedera(CKNBLZId);
   document.getElementById('spCotHert').textContent =  obtenerCotHedera(HertId);
+  /*
   document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6');
   document.getElementById('h24XSauce').textContent =  obtenerPorHedera(XSauceId, 'h24');
   document.getElementById('h6GIB').textContent =  obtenerPorHedera(GIBId, 'h6');
@@ -236,7 +237,7 @@ let inicializar=()=>{
   document.getElementById('h6Hert').textContent =  obtenerPorHedera(HertId, 'h6');
   document.getElementById('h24Hert').textContent =  obtenerPorHedera(HertId, 'h24');
   document.getElementById('h6CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h6');
-  document.getElementById('h24CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h24');
+  document.getElementById('h24CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h24');*/
 }
 
 
