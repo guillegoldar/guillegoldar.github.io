@@ -16,10 +16,10 @@ const tenenciaUSDC = 0;
 const tenenciaBTC = 0;
 const tenenciaWBTC = 0;
 const tenenciaETH = 0;
-const tenenciaHBAR = 37.428;
+const tenenciaHBAR = 36.892;
 const tenenciaXSauce = 67956.342
-const tenenciaGIB = 0;
-const tenenciaDosa = 1636195.454;
+const tenenciaGIB = 99239.887;
+const tenenciaDosa = 1136195.454;
 const tenenciaCKNBLZ = 4998334.049;
 const tenenciaHert = 2067895.196;
 
