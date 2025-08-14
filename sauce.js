@@ -16,12 +16,12 @@ const tenenciaUSDC = 0;
 const tenenciaBTC = 0;
 const tenenciaWBTC = 0;
 const tenenciaETH = 0;
-const tenenciaHBAR = 39.786;
+const tenenciaHBAR = 37.428;
 const tenenciaXSauce = 67956.342
 const tenenciaGIB = 0;
-const tenenciaDosa = 1756195.454
-const tenenciaCKNBLZ = 4699251.686;
-const tenenciaHert = 1693139.49;
+const tenenciaDosa = 1636195.454;
+const tenenciaCKNBLZ = 4998334.049;
+const tenenciaHert = 2067895.196;
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
