@@ -19,7 +19,7 @@ const tenenciaETH = 0;
 const tenenciaHBAR = 35.245;
 const tenenciaXSauce = 67956.342
 const tenenciaGIB = 111855.827;
-const tenenciaDosa = 1071195.454;
+const tenenciaDosa = 1000000;
 const tenenciaCKNBLZ = 4499167.025;
 const tenenciaHert = 2546941.88;
 
