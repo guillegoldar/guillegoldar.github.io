@@ -140,7 +140,7 @@ let calcularTotal=() => {
 				     + tenenciaXSauce * cotXSauce 
      			   + tenenciaGIB * cotGIB
 				     + tenenciaDosa * cotDosa
-				     + tenenciaCKNBLZ * cotCKNBLZ
+				     //+ tenenciaCKNBLZ * cotCKNBLZ
 				     + tenenciaHert * cotHert
 				)
   return total;
@@ -201,14 +201,14 @@ let calcularPesoDosa=() => {
   let peso = dDosa * 100 / calcularTotal();
   return peso;
 };
-
+/*
 let calcularPesoCKNBLZ=() => {  
   let cotCKNBLZ = document.getElementById('spCotCKNBLZ').innerText;  
   let dCKNBLZ = tenenciaCKNBLZ * cotCKNBLZ;
   let peso = dCKNBLZ * 100 / calcularTotal();
   return peso;
 };
-
+*/
 let calcularPesoHert=() => {  
   let cotHert = document.getElementById('spCotHert').innerText;  
   let dHert = tenenciaHert * cotHert;
