@@ -20,7 +20,7 @@ const tenenciaHBAR = 35.245;
 const tenenciaXSauce = 67956.342
 const tenenciaGIB = 111855.827;
 const tenenciaDosa = 1000000;
-const tenenciaCKNBLZ = 4499167.025;
+const tenenciaCKNBLZ = 4000000;
 const tenenciaHert = 2546941.88;
 
 let formatoNum = (num, cantDec) => {
