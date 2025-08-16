@@ -132,7 +132,7 @@ let calcularTotal=() => {
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
   let cotGIB = document.getElementById('spCotGIB').innerText;
   let cotDosa = document.getElementById('spCotDosa').innerText;  
-  let cotCKNBLZ = document.getElementById('spCotCKNBLZ').innerText;
+  //let cotCKNBLZ = document.getElementById('spCotCKNBLZ').innerText;
   let cotHert = document.getElementById('spCotHert').innerText;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
