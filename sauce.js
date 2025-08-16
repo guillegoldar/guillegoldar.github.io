@@ -8,7 +8,7 @@ const WBTCId = '0x29450f04b7ab6ff1cbcc199c3b992f79001e7621';
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
 const XSauceId = '0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
-const GIBId = '0x5ae4d338e5c763a89dd29da5dbeaaebbdd0a390b';
+//const GIBId = '0x5ae4d338e5c763a89dd29da5dbeaaebbdd0a390b';
 const DosaId = '0xcba362fea1145be558833ffae29cb110cc55a62e';
 //const CKNBLZId = '0x81ca544318cef07b92ffa54eb96cbce657d3bca5';
 const HertId = '0x974115f8cb66b694d39b5fc5c9bc8ef8bddff029';
@@ -18,7 +18,7 @@ const tenenciaWBTC = 0;
 const tenenciaETH = 0;
 const tenenciaHBAR = 298.565;
 const tenenciaXSauce = 67987.983;
-const tenenciaGIB = 111855.827;
+//const tenenciaGIB = 111855.827;
 const tenenciaDosa = 1332102.313;
 //const tenenciaCKNBLZ = 0;
 const tenenciaHert = 2546941.88;
@@ -130,7 +130,7 @@ let calcularTotal=() => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
-  let cotGIB = document.getElementById('spCotGIB').innerText;
+  //let cotGIB = document.getElementById('spCotGIB').innerText;
   let cotDosa = document.getElementById('spCotDosa').innerText;  
   //let cotCKNBLZ = document.getElementById('spCotCKNBLZ').innerText;
   let cotHert = document.getElementById('spCotHert').innerText;
@@ -138,7 +138,7 @@ let calcularTotal=() => {
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
 				     + tenenciaXSauce * cotXSauce 
-     			   + tenenciaGIB * cotGIB
+     			   //+ tenenciaGIB * cotGIB
 				     + tenenciaDosa * cotDosa
 				     //+ tenenciaCKNBLZ * cotCKNBLZ
 				     + tenenciaHert * cotHert
@@ -187,14 +187,14 @@ let calcularPesoXSauce=() => {
   let peso = dXSauce * 100 / calcularTotal();
   return peso;
 };
-
+/*
 let calcularPesoGIB=() => {  
   let cotGIB = document.getElementById('spCotGIB').innerText;  
   let dGIB = tenenciaGIB * cotGIB;
   let peso = dGIB * 100 / calcularTotal();
   return peso;
 };
-
+*/
 let calcularPesoDosa=() => {  
   let cotDosa = document.getElementById('spCotDosa').innerText;  
   let dDosa = tenenciaDosa * cotDosa;
@@ -223,7 +223,7 @@ let inicializar=()=>{
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
-  document.getElementById('spCotGIB').textContent =  obtenerCotHedera(GIBId);
+  //document.getElementById('spCotGIB').textContent =  obtenerCotHedera(GIBId);
   document.getElementById('spCotDosa').textContent =  obtenerCotHedera(DosaId);
   //document.getElementById('spCotCKNBLZ').textContent =  obtenerCotHedera(CKNBLZId);
   document.getElementById('spCotHert').textContent =  obtenerCotHedera(HertId);
@@ -267,11 +267,11 @@ let refrescar=()=>{
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('tXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce),0);
   document.getElementById('vXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce)*parseFloat(document.getElementById('spCotXSauce').innerText),0);
-  document.getElementById('GIB').textContent = formatoNum(parseFloat(document.getElementById('spCotGIB').innerText),5);
+  /*document.getElementById('GIB').textContent = formatoNum(parseFloat(document.getElementById('spCotGIB').innerText),5);
   document.getElementById('pGIB').textContent = ' (' + formatoNum(parseFloat(calcularPesoGIB()),2) +  '%)';
   document.getElementById('tGIB').textContent = formatoNum(parseFloat(tenenciaGIB),0);
   document.getElementById('vGIB').textContent = formatoNum(parseFloat(tenenciaGIB)*parseFloat(document.getElementById('spCotGIB').innerText),0);
-  document.getElementById('Dosa').textContent = formatoNum(parseFloat(document.getElementById('spCotDosa').innerText),5);
+  */document.getElementById('Dosa').textContent = formatoNum(parseFloat(document.getElementById('spCotDosa').innerText),5);
   document.getElementById('pDosa').textContent = ' (' + formatoNum(parseFloat(calcularPesoDosa()),2) +  '%)';
   document.getElementById('tDosa').textContent = formatoNum(parseFloat(tenenciaDosa),0);
   document.getElementById('vDosa').textContent = formatoNum(parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText),0);
@@ -288,7 +288,8 @@ let refrescar=()=>{
   document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
-  document.getElementById('totalMeme').textContent = formatoNum((parseFloat(tenenciaGIB)*parseFloat(document.getElementById('spCotGIB').innerText)
+  document.getElementById('totalMeme').textContent = formatoNum(0
+                                                     //+(parseFloat(tenenciaGIB)*parseFloat(document.getElementById('spCotGIB').innerText)
                                                      +parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText)
                                                      //+parseFloat(tenenciaCKNBLZ)*parseFloat(document.getElementById('spCotCKNBLZ').innerText)
                                                      +parseFloat(tenenciaHert)*parseFloat(document.getElementById('spCotHert').innerText))
