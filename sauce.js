@@ -59,7 +59,7 @@ let obtenerCotHedera = (Id) => {
       return 0;
     }
 };
-
+/*
 let obtenerPorHedera = (Id, temp) => {
     try {
       //vpa
@@ -82,7 +82,7 @@ let obtenerPorHedera = (Id, temp) => {
       return 0;
     }
 };
-
+*/
 let obtenerCotBitget = (symbol) => {
     try {
       let resultado;
@@ -290,7 +290,7 @@ let refrescar=()=>{
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
   document.getElementById('totalMeme').textContent = formatoNum((parseFloat(tenenciaGIB)*parseFloat(document.getElementById('spCotGIB').innerText)
                                                      +parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText)
-                                                     +parseFloat(tenenciaCKNBLZ)*parseFloat(document.getElementById('spCotCKNBLZ').innerText)
+                                                     //+parseFloat(tenenciaCKNBLZ)*parseFloat(document.getElementById('spCotCKNBLZ').innerText)
                                                      +parseFloat(tenenciaHert)*parseFloat(document.getElementById('spCotHert').innerText))
                                                      /parseFloat(calcularTotal())*100,2);
 }
