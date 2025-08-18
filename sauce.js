@@ -16,12 +16,12 @@ const tenenciaUSDC = 0;
 const tenenciaBTC = 0;
 const tenenciaWBTC = 0;
 const tenenciaETH = 0;
-const tenenciaHBAR = 21.937;
-const tenenciaXSauce = 67987.983;
+const tenenciaHBAR = document.getElementById('tHBAR').innerText;//21.937;
+const tenenciaXSauce = document.getElementById('tXSauce').innerText;//67987.983;
 //const tenenciaGIB = 111855.827;
-const tenenciaDosa = 1750049.474;
-const tenenciaHTrack = 448897.814
-const tenenciaHert = 2546941.88;
+const tenenciaDosa = document.getElementById('tDosa').innerText;//1750049.474;
+const tenenciaHTrack = document.getElementById('tHTrack').innerText;//448897.814
+const tenenciaHert = document.getElementById('tHert').innerText;//2546941.88;
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
