@@ -8,7 +8,7 @@ const WBTCId = '0x29450f04b7ab6ff1cbcc199c3b992f79001e7621';
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
 const XSauceId = '0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
-const KeetaId = '0x5ae4d338e5c763a89dd29da5dbeaaebbdd0a390b';
+const KeetaSimbol = 'KEETAUSDT';
 const DosaId = '0xcba362fea1145be558833ffae29cb110cc55a62e';
 const HTrackId = '0x978a12f0b7e4b5b7739c9c3b032cf0e29584e5c6';
 const HertId = '0x974115f8cb66b694d39b5fc5c9bc8ef8bddff029';
@@ -223,15 +223,15 @@ let inicializar=()=>{
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
   document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
-  document.getElementById('spCotKeeta').textContent =  obtenerCotHedera(KeetaId);
+  document.getElementById('spCotKeeta').textContent =  obtenerCotBitget(KeetaSimbol);
   document.getElementById('spCotDosa').textContent =  obtenerCotHedera(DosaId);
   document.getElementById('spCotHTrack').textContent =  obtenerCotHedera(HTrackId);
   document.getElementById('spCotHert').textContent =  obtenerCotHedera(HertId);
   /*
   document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6');
   document.getElementById('h24XSauce').textContent =  obtenerPorHedera(XSauceId, 'h24');
-  document.getElementById('h6Keeta').textContent =  obtenerPorHedera(KeetaId, 'h6');
-  document.getElementById('h24Keeta').textContent =  obtenerPorHedera(KeetaId, 'h24');
+  document.getElementById('h6Keeta').textContent =  obtenerPorHedera(KeetaSimbol, 'h6');
+  document.getElementById('h24Keeta').textContent =  obtenerPorHedera(KeetaSimbol, 'h24');
   document.getElementById('h6Dosa').textContent =  obtenerPorHedera(DosaId, 'h6');
   document.getElementById('h24Dosa').textContent =  obtenerPorHedera(DosaId, 'h24');
   document.getElementById('h6Hert').textContent =  obtenerPorHedera(HertId, 'h6');
