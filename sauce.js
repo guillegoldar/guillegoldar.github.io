@@ -12,16 +12,16 @@ const XSauceId = '0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
 const DosaId = '0xcba362fea1145be558833ffae29cb110cc55a62e';
 const HTrackId = '0x978a12f0b7e4b5b7739c9c3b032cf0e29584e5c6';
 const HertId = '0x974115f8cb66b694d39b5fc5c9bc8ef8bddff029';
-const tenenciaUSDC = 0;
-const tenenciaBTC = 0;
-const tenenciaWBTC = 0;
-const tenenciaETH = 0;
-const tenenciaHBAR = document.getElementById('tHBAR').innerText;//21.937;
-const tenenciaXSauce = document.getElementById('tXSauce').innerText;//67987.983;
-//const tenenciaGIB = 111855.827;
-const tenenciaDosa = document.getElementById('tDosa').innerText;//1750049.474;
-const tenenciaHTrack = document.getElementById('tHTrack').innerText;//448897.814
-const tenenciaHert = document.getElementById('tHert').innerText;//2546941.88;
+const tenenciaUSDC = document.getElementById('tUSDC').innerText;
+const tenenciaBTC = document.getElementById('tBTC').innerText;
+const tenenciaWBTC = document.getElementById('tWBTC').innerText;
+const tenenciaETH = document.getElementById('tETH').innerText;
+const tenenciaHBAR = document.getElementById('tHBAR').innerText;
+const tenenciaXSauce = document.getElementById('tXSauce').innerText;
+//const tenenciaGIB = document.getElementById('tGIB').innerText;
+const tenenciaDosa = document.getElementById('tDosa').innerText;
+const tenenciaHTrack = document.getElementById('tHTrack').innerText;
+const tenenciaHert = document.getElementById('tHert').innerText;
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
