@@ -4,7 +4,7 @@ const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol='
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const USDCSimbol = 'USDCUSDT';
 const BTCSimbol = 'BTCUSDT';
-const WBTCId = '0x29450f04b7ab6ff1cbcc199c3b992f79001e7621';
+const WBTCId = 'hedera-hashgraph/pools/0x29450f04b7ab6ff1cbcc199c3b992f79001e7621';
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
 const XSauceId = 'hedera-hashgraph/pools/0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
