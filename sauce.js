@@ -1,5 +1,5 @@
 // Definir la URL de la API
-const apiUrGeckoTerminal = 'https://api.geckoterminal.com/api/v2/networks/hedera-hashgraph/pools/';
+const apiUrGeckoTerminal = 'https://api.geckoterminal.com/api/v2/networks/';
 const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol=';
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const USDCSimbol = 'USDCUSDT';
@@ -7,11 +7,11 @@ const BTCSimbol = 'BTCUSDT';
 const WBTCId = '0x29450f04b7ab6ff1cbcc199c3b992f79001e7621';
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
-const XSauceId = '0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
-const KeetaId = '0xd9edc75a3a797ec92ca370f19051babebfb2edee';
-const DosaId = '0xcba362fea1145be558833ffae29cb110cc55a62e';
-const HTrackId = '0x978a12f0b7e4b5b7739c9c3b032cf0e29584e5c6';
-const HertId = '0x974115f8cb66b694d39b5fc5c9bc8ef8bddff029';
+const XSauceId = 'hedera-hashgraph/pools/0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
+const KeetaId = 'base/pools/0xd9edc75a3a797ec92ca370f19051babebfb2edee';
+const DosaId = 'hedera-hashgraph/pools/0xcba362fea1145be558833ffae29cb110cc55a62e';
+const HertId = 'hedera-hashgraph/pools/0x974115f8cb66b694d39b5fc5c9bc8ef8bddff029';
+const HTrackId = 'hedera-hashgraph/pools/0x978a12f0b7e4b5b7739c9c3b032cf0e29584e5c6';
 const tenenciaUSDC = document.getElementById('tUSDC').innerText;
 const tenenciaBTC = document.getElementById('tBTC').innerText;
 const tenenciaWBTC = document.getElementById('tWBTC').innerText;
