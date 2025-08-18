@@ -1,5 +1,5 @@
 // Definir la URL de la API
-const apiUrlHedera = 'https://api.geckoterminal.com/api/v2/networks/hedera-hashgraph/pools/';
+const apiUrGeckoTerminal = 'https://api.geckoterminal.com/api/v2/networks/hedera-hashgraph/pools/';
 const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol=';
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const USDCSimbol = 'USDCUSDT';
@@ -8,7 +8,7 @@ const WBTCId = '0x29450f04b7ab6ff1cbcc199c3b992f79001e7621';
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
 const XSauceId = '0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
-const KeetaSimbol = 'KEETAUSDT';
+const KeetaId = '0xd9edc75a3a797ec92ca370f19051babebfb2edee';
 const DosaId = '0xcba362fea1145be558833ffae29cb110cc55a62e';
 const HTrackId = '0x978a12f0b7e4b5b7739c9c3b032cf0e29584e5c6';
 const HertId = '0x974115f8cb66b694d39b5fc5c9bc8ef8bddff029';
@@ -38,11 +38,11 @@ let formatoMoneda = (num, mon, cantDec) => {
   return numForm;
 };
 
-let obtenerCotHedera = (Id) => {
+let obtenerCotGeckoTerminal = (Id) => {
     try {
       let resultado;
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', apiUrlHedera+Id, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
+      xhr.open('GET', apiUrGeckoTerminal+Id, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
       xhr.send();
       if (xhr.status === 200) {
           const data = JSON.parse(xhr.responseText);
@@ -65,7 +65,7 @@ let obtenerPorHedera = (Id, temp) => {
       //vpa
       let resultado;
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', apiUrlHedera+Id, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
+      xhr.open('GET', apiUrGeckoTerminal+Id, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
       xhr.send();
       if (xhr.status === 200) {
           const data = JSON.parse(xhr.responseText);
@@ -219,19 +219,19 @@ let calcularPesoHert=() => {
 let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
-  document.getElementById('spCotWBTC').textContent = obtenerCotHedera(WBTCId);
+  document.getElementById('spCotWBTC').textContent = obtenerCotGeckoTerminal(WBTCId);
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
-  document.getElementById('spCotXSauce').textContent = obtenerCotHedera(XSauceId);
-  document.getElementById('spCotKeeta').textContent =  obtenerCotBitget(KeetaSimbol);
-  document.getElementById('spCotDosa').textContent =  obtenerCotHedera(DosaId);
-  document.getElementById('spCotHTrack').textContent =  obtenerCotHedera(HTrackId);
-  document.getElementById('spCotHert').textContent =  obtenerCotHedera(HertId);
+  document.getElementById('spCotXSauce').textContent = obtenerCotGeckoTerminal(XSauceId);
+  document.getElementById('spCotKeeta').textContent =  obtenerCotGeckoTerminal(KeetaId);
+  document.getElementById('spCotDosa').textContent =  obtenerCotGeckoTerminal(DosaId);
+  document.getElementById('spCotHTrack').textContent =  obtenerCotGeckoTerminal(HTrackId);
+  document.getElementById('spCotHert').textContent =  obtenerCotGeckoTerminal(HertId);
   /*
   document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6');
   document.getElementById('h24XSauce').textContent =  obtenerPorHedera(XSauceId, 'h24');
-  document.getElementById('h6Keeta').textContent =  obtenerPorHedera(KeetaSimbol, 'h6');
-  document.getElementById('h24Keeta').textContent =  obtenerPorHedera(KeetaSimbol, 'h24');
+  document.getElementById('h6Keeta').textContent =  obtenerPorHedera(KeetaId, 'h6');
+  document.getElementById('h24Keeta').textContent =  obtenerPorHedera(KeetaId, 'h24');
   document.getElementById('h6Dosa').textContent =  obtenerPorHedera(DosaId, 'h6');
   document.getElementById('h24Dosa').textContent =  obtenerPorHedera(DosaId, 'h24');
   document.getElementById('h6Hert').textContent =  obtenerPorHedera(HertId, 'h6');
