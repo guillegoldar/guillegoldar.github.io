@@ -143,7 +143,7 @@ let calcularTotal=() => {
 				     //+ tenenciaZAP * cotZAP
 				     + tenenciaHert * cotHert
 				)
-  return total;
+  return 8000;//total;
 };
 
 let calcularPesoUSDC=() => {  
