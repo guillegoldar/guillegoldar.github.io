@@ -267,11 +267,11 @@ let refrescar=()=>{
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('tXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce),0);
   document.getElementById('vXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce)*parseFloat(document.getElementById('spCotXSauce').innerText),0);
-  document.getElementById('Keeta').textContent = formatoNum(parseFloat(document.getElementById('spCotKeeta').innerText),5);
+  document.getElementById('Keeta').textContent = formatoNum(parseFloat(document.getElementById('spCotKeeta').innerText),3);
   document.getElementById('pKeeta').textContent = ' (' + formatoNum(parseFloat(calcularPesoKeeta()),2) +  '%)';
   document.getElementById('tKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta),0);
   document.getElementById('vKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText),0);
-  document.getElementById('Dosa').textContent = formatoNum(parseFloat(document.getElementById('spCotDosa').innerText),2);
+  document.getElementById('Dosa').textContent = formatoNum(parseFloat(document.getElementById('spCotDosa').innerText),5);
   document.getElementById('pDosa').textContent = ' (' + formatoNum(parseFloat(calcularPesoDosa()),2) +  '%)';
   document.getElementById('tDosa').textContent = formatoNum(parseFloat(tenenciaDosa),0);
   document.getElementById('vDosa').textContent = formatoNum(parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText),0);
