@@ -284,7 +284,7 @@ let refrescar=()=>{
   document.getElementById('tHert').textContent = formatoNum(parseFloat(tenenciaHert),0);
   document.getElementById('vHert').textContent = formatoNum(parseFloat(tenenciaHert)*parseFloat(document.getElementById('spCotHert').innerText),0);  
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
-  document.getElementById('x').textContent = ' (' + Math.trunc(calcularTotal()/5000) + 'x)';
+  document.getElementById('dATH').textContent = ' (desde ATH' + formatoNum((calcularTotal()-8500)*100/8500,0) + '%)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
   document.getElementById('totalMeme').textContent = formatoNum((0
