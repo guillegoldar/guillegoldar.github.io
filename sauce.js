@@ -131,17 +131,17 @@ let calcularTotal=() => {
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
   let cotKeeta = document.getElementById('spCotKeeta').innerText;
-  let cotDosa = document.getElementById('spCotDosa').innerText;  
+  //let cotDosa = document.getElementById('spCotDosa').innerText;  
   //let cotZAP = document.getElementById('spCotZAP').innerText;
-  let cotHert = document.getElementById('spCotHert').innerText;
+  //let cotHert = document.getElementById('spCotHert').innerText;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
 				     + tenenciaXSauce * cotXSauce 
      			   + tenenciaKeeta * cotKeeta
-				     + tenenciaDosa * cotDosa
+				     //+ tenenciaDosa * cotDosa
 				     //+ tenenciaZAP * cotZAP
-				     + tenenciaHert * cotHert
+				     //+ tenenciaHert * cotHert
 				)
   return 8000;//total;
 };
