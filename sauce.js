@@ -141,7 +141,7 @@ let calcularTotal=() => {
      			   + tenenciaKeeta * cotKeeta
 				     //+ tenenciaDosa * cotDosa
 				     //+ tenenciaZAP * cotZAP
-				     //+ tenenciaHert * cotHert
+				     + tenenciaHert * cotHert
 				)
   return total;
 };
