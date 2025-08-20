@@ -45,3 +45,16 @@
 .invisible {
   visibility: hidden;
 }
+
+/* Estilos por defecto para escritorio */
+body {
+    font-size: 16px;
+}
+
+/* Media Query para dispositivos con un ancho máximo de 600px */
+@media only screen and (max-width: 600px) {
+    /* Aquí los estilos solo para móviles */
+    body {
+        font-size: 20px; /* Letras más grandes para el cuerpo */
+    }
+}
