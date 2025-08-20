@@ -30,6 +30,7 @@
 .seccionPrincipal {
   align-items: center;
   color:#DDDDDD;
+  font-size: 12px;
 }
 
 .seccionPorcentajes {
@@ -56,5 +57,11 @@ body {
     /* Aquí los estilos solo para móviles */
     body {
         font-size: 20px; /* Letras más grandes para el cuerpo */
+    }
+
+    .seccionPrincipal {
+      align-items: center;
+      color:#DDDDDD;
+      font-size: 18px;
     }
 }
