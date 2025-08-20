@@ -33,6 +33,12 @@
   font-size: 12px;
 }
 
+.seccionSecundaria {
+  align-items: center;
+  color:#DDDDDD;
+  font-size: 12px;
+}
+
 .seccionPorcentajes {
   align-items: center;
   color:#DDDDDD;
@@ -64,4 +70,10 @@ body {
       color:#DDDDDD;
       font-size: 18px;
     }
+
+    .seccionSecundaria {
+      align-items: center;
+      color:#DDDDDD;
+      font-size: 18px;
+    }    
 }
