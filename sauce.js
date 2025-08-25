@@ -215,16 +215,6 @@ let inicializar=()=>{
   document.getElementById('spCotKeeta').textContent =  obtenerCotGeckoTerminal(KeetaId);
   document.getElementById('spCotDosa').textContent =  obtenerCotGeckoTerminal(DosaId);
   document.getElementById('spCotJeet').textContent =  obtenerCotGeckoTerminal(JeetId);
-  document.getElementById('h6XSauce').textContent =  obtenerPorHedera(XSauceId, 'h6');
-  document.getElementById('h24XSauce').textContent =  obtenerPorHedera(XSauceId, 'h24');
-  document.getElementById('h6Keeta').textContent =  obtenerPorHedera(KeetaId, 'h6');
-  document.getElementById('h24Keeta').textContent =  obtenerPorHedera(KeetaId, 'h24');
-  document.getElementById('h6Dosa').textContent =  obtenerPorHedera(DosaId, 'h6');
-  document.getElementById('h24Dosa').textContent =  obtenerPorHedera(DosaId, 'h24');
-  document.getElementById('h6Jeet').textContent =  obtenerPorHedera(JeetId, 'h6');
-  document.getElementById('h24Jeet').textContent =  obtenerPorHedera(JeetId, 'h24');
-  document.getElementById('h6CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h6');
-  document.getElementById('h24CKNBLZ').textContent =  obtenerPorHedera(CKNBLZId, 'h24');
 }
 
 
