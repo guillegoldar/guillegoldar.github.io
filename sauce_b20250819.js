@@ -266,7 +266,7 @@ let refrescar=()=>{
   document.getElementById('totalMeme').textContent = formatoNum((0
                                                      +parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText)
                                                      +parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText)
-                                                     +parseFloat(tenenciaHert)*parseFloat(document.getElementById('spCotHert').innerText)
+                                                     +parseFloat(tenenciaHert)*parseFloat(document.getElementById('spCotHert').innerText))
                                                      /parseFloat(calcularTotal())*100,2);
 }
 
