@@ -131,7 +131,6 @@ let calcularTotal=() => {
   let cotKeeta = document.getElementById('spCotKeeta').innerText;
   let cotDosa = document.getElementById('spCotDosa').innerText;  
   let cotHert = document.getElementById('spCotHert').innerText;
-  let cotJeet = document.getElementById('spCotJeet').innerText;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
   				   + tenenciaHBAR * cotHBAR				   
@@ -139,7 +138,6 @@ let calcularTotal=() => {
      			   + tenenciaKeeta * cotKeeta
 				     + tenenciaDosa * cotDosa
 				     + tenenciaHert * cotHert
-				     + tenenciaJeet * cotJeet
 				)
   return total;
 };
