@@ -14,6 +14,8 @@
 <tr class="gris"><td class="tdL">Moneda</td><td class="tdC">Cotización</td><td class="tdC">Tenencia</td><td class="tdC">Valor</td><td class="tdR">Porcentaje</td></tr>
 <tr class="gris"><td class="tdL">USDC</td><td id="USDC" class="tdC"></td>
     <td class="tdC" id="tUSDC">0</td><td id="vUSDC" class="tdC"></td><td id="pUSDC" class="tdR"></td></tr>
+<tr class="gris"><td class="tdL">PaxG</td><td id="PaxG" class="tdC"></td>
+    <td class="tdC" id="tPaxG">0</td><td id="vPaxG" class="tdC"></td><td id="pPaxG" class="tdR"></td></tr->
 <tr class="gris"><td class="tdL">BTC</td><td id="BTC" class="tdC"></td>
     <td class="tdC" id="tBTC">0</td><td id="vBTC" class="tdC"></td><td id="pBTC" class="tdR"></td></tr>
 <tr class="gris"><td class="tdL">wBTC</td><td id="WBTC" class="tdC"></td>
@@ -30,8 +32,6 @@
     <td class="tdC" id="tDosa">0</td><td id="vDosa" class="tdC"></td><td id="pDosa" class="tdR"></td></tr>
 <tr class="gris"><td class="tdL">Jeet</td><td id="Jeet" class="tdC"></td>
     <td class="tdC" id="tJeet">2451472.473</td><td id="vJeet" class="tdC"></td><td id="pJeet" class="tdR"></td></tr>
-<!--tr class="gris"><td class="tdL">ZAP</td><td id="ZAP" class="tdC"></td>
-    <td class="tdC" id="tZAP">0</td><td id="vZAP" class="tdC"></td><td id="pZAP" class="tdR"></td></tr-->
 </table>
 <table class="seccionSecundaria">
 <tr class="gris"><td>Total en USDC: </td><td id="total" class="negrita"></td><td id="dATH" class="gris"></td></tr>
@@ -50,7 +50,7 @@
 <td id="spCotXSauce" class="oculto"></td>
 <td id="spCotKeeta" class="oculto"></td>
 <td id="spCotDosa" class="oculto"></td>
-<!--td id="spCotZAP" class="oculto"></td-->
+<td id="spCotPaxG" class="oculto"></td>
 <td id="spCotJeet" class="oculto"></td>
 <td id="spCotGeneral" class="oculto"></td>
 <br>
@@ -58,8 +58,9 @@
 </table>
 <table class="seccionSecundaria">
     <tr class="gris"><td>Antes:</td><td id="antes">2466.28</td><td>&nbsp;&nbsp;&nbsp;Después:</td><td id="despues"></td><td>&nbsp;&nbsp;&nbsp;Dif:</td><td id="dif"></td></tr>
-    <tr class="gris"><td>%BTC:</td><td id="pBitcoin">0.00655293</td><td>&nbsp;&nbsp;&nbsp;%ETH:</td><td id="pEthereum">0.15902908</td><td></td><td></td></tr>
+    <tr class="gris"><td>BTC:</td><td id="vBitcoin"></td><td>&nbsp;&nbsp;&nbsp;ETH:</td><td id="vEthereum"></td><td>&nbsp;&nbsp;&nbsp;PaxG:</td><td id="vPaxG"></td></tr>
+    <tr class="gris"><td>%BTC:</td><td id="pBitcoin">0.00655293</td><td>&nbsp;&nbsp;&nbsp;%ETH:</td><td id="pEthereum">0.15902908</td><td>&nbsp;&nbsp;&nbsp;%PaxG:</td><td id="pPaxG">0</td></tr>
 </table>
 </body>
-<script src="sauce.js" type="text/javascript"></script>
+<script src="sauce_v1.js" type="text/javascript"></script>
 </html>
