@@ -266,22 +266,22 @@ let refrescar=()=>{
                                                       -parseFloat(document.getElementById('antes').innerText),0);
   document.getElementById('vBitcoin').textContent = formatoNum(parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText),0);
   document.getElementById('vEthereum').textContent = formatoNum(parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText),0);
-  document.getElementById('vPAXGOLD').textContent = formatoNum(parseFloat(document.getElementById('pPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
+  document.getElementById('vPAXGOLD').textContent = formatoNum(parseFloat(document.getElementById('pPAXGOLD').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('pBitcoin').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
-                                                      +parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
+                                                      +parseFloat(document.getElementById('vPAXGOLD').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
   document.getElementById('pEthereum').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
-                                                      +parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
+                                                      +parseFloat(document.getElementById('vPAXGOLD').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
   document.getElementById('pPAXGOLD').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
-                                                      +parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
+                                                      +parseFloat(document.getElementById('vPAXGOLD').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
   document.getElementById('antes').textContent = formatoNum(parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
 }
 
