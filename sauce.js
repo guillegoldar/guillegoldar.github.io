@@ -219,7 +219,7 @@ let refrescar=()=>{
   document.getElementById('PAXG').textContent = formatoNum(parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('pPAXG').textContent = ' (' + formatoNum(parseFloat(calcularPesoPAXG()),2) +  '%)';
   document.getElementById('tPAXG').textContent = formatoNum(parseFloat(tenenciaPAXG),5);
-  document.getElementById('vPAXG').textContent = 111;//formatoNum(parseFloat(tenenciaPAXG)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
+  document.getElementById('vPAXG').textContent = formatoNum(parseFloat(tenenciaPAXG)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('WBTC').textContent = formatoNum(parseFloat(document.getElementById('spCotWBTC').innerText),0);
   document.getElementById('pWBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
   document.getElementById('tWBTC').textContent = formatoNum(parseFloat(tenenciaWBTC),5);
@@ -266,7 +266,7 @@ let refrescar=()=>{
                                                       -parseFloat(document.getElementById('antes').innerText),0);
   document.getElementById('vBitcoin').textContent = formatoNum(parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText),0);
   document.getElementById('vEthereum').textContent = formatoNum(parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText),0);
-  document.getElementById('vPAXG').textContent = formatoNum(parseFloat(document.getElementById('pPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
+  document.getElementById('vPAXGOLD').textContent = formatoNum(parseFloat(document.getElementById('pPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('pBitcoin').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
