@@ -217,7 +217,6 @@ let inicializar=()=>{
   document.getElementById('spCotJeet').textContent =  obtenerCotGeckoTerminal(JeetId);
 }
 
-
 let refrescar=()=>{
   inicializar();
   document.getElementById('USDC').textContent = formatoNum(parseFloat(document.getElementById('spCotUSDC').innerText),3);
@@ -265,5 +264,13 @@ let refrescar=()=>{
                                                      +parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText)
                                                      +parseFloat(tenenciaJeet)*parseFloat(document.getElementById('spCotJeet').innerText))
                                                      /parseFloat(calcularTotal())*100,2);
+document.getElementById('despues').textContent = formatoNum(916
+                                                      +parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotWBTC').innerText)
+                                                      +parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText),2);
+document.getElementById('dif').textContent = formatoNum((916
+                                                      +parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotWBTC').innerText)
+                                                      +parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText),2)
+                                                      -parseFloat(document.getElementById('antes').innerText));
+
 }
 
