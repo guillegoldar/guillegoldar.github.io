@@ -219,9 +219,7 @@ let refrescar=()=>{
   document.getElementById('PAXG').textContent = formatoNum(parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('pPAXG').textContent = ' (' + formatoNum(parseFloat(calcularPesoPAXG()),2) +  '%)';
   document.getElementById('tPAXG').textContent = formatoNum(parseFloat(tenenciaPAXG),5);
-  alert(tenenciaPAXG);
-  alert(document.getElementById('spCotPAXG').innerText);
-  alert(tenenciaPAXG*document.getElementById('spCotPAXG').innerText);  
+  alert(formatoNum(parseFloat(tenenciaPAXG)*parseFloat(document.getElementById('spCotPAXG').innerText),0));  
   document.getElementById('vPAXG').textContent = formatoNum(parseFloat(tenenciaPAXG)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('WBTC').textContent = formatoNum(parseFloat(document.getElementById('spCotWBTC').innerText),0);
   document.getElementById('pWBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
