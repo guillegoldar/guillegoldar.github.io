@@ -14,7 +14,7 @@ const DosaId = 'hedera-hashgraph/pools/0xcba362fea1145be558833ffae29cb110cc55a62
 const JeetId = 'hedera-hashgraph/pools/0x1f0c4011e3dbad2b1264fcf99ba54f456b1a35fe';
 const tenenciaUSDC = document.getElementById('tUSDC').innerText;
 const tenenciaBTC = document.getElementById('tBTC').innerText;
-const tenenciaPAXG = document.getElementById('tPaxG').innerText;
+const tenenciaPAXG = document.getElementById('tPAXG').innerText;
 const tenenciaWBTC = document.getElementById('tWBTC').innerText;
 const tenenciaETH = document.getElementById('tETH').innerText;
 const tenenciaHBAR = document.getElementById('tHBAR').innerText;
@@ -103,7 +103,7 @@ let obtenerCotDolar=()=> {
 let calcularTotal=() => {  
   let cotUSDC = document.getElementById('spCotUSDC').innerText;  
   let cotBTC = document.getElementById('spCotBTC').innerText;  
-  let cotPaxG = document.getElementById('spCotPaxG').innerText;  
+  let cotPAXG = document.getElementById('spCotPAXG').innerText;  
   let cotETH = document.getElementById('spCotETH').innerText;    
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
@@ -113,7 +113,7 @@ let calcularTotal=() => {
   let cotJeet = document.getElementById('spCotJeet').innerText;
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
-             + tenenciaPAXG * cotPaxG
+             + tenenciaPAXG * cotPAXG
   				   + tenenciaHBAR * cotHBAR				   
 				     + tenenciaXSauce * cotXSauce 
      			   + tenenciaKeeta * cotKeeta
@@ -145,8 +145,8 @@ let calcularPesoBTC=() => {
 };
 
 let calcularPesoPAXG=() => {  
-  let cotPaxG = document.getElementById('spCotPaxG').innerText;  
-  let dPAXG = tenenciaPAXG * cotPaxG;
+  let cotPAXG = document.getElementById('spCotPAXG').innerText;  
+  let dPAXG = tenenciaPAXG * cotPAXG;
   let peso = dPAXG * 100 / calcularTotal();
   return peso;
 };
@@ -196,7 +196,7 @@ let calcularPesoJeet=() => {
 let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
-  document.getElementById('spCotPaxG').textContent = obtenerCotBitget(PAXGSimbol);
+  document.getElementById('spCotPAXG').textContent = obtenerCotBitget(PAXGSimbol);
   document.getElementById('spCotWBTC').textContent = obtenerCotGeckoTerminal(WBTCId);
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
@@ -216,10 +216,10 @@ let refrescar=()=>{
   document.getElementById('pBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
   document.getElementById('tBTC').textContent = formatoNum(parseFloat(tenenciaBTC),5);
   document.getElementById('vBTC').textContent = formatoNum(parseFloat(tenenciaBTC)*parseFloat(document.getElementById('spCotBTC').innerText),0);
-  document.getElementById('PAXG').textContent = formatoNum(parseFloat(document.getElementById('spCotPaxG').innerText),0);
+  document.getElementById('PAXG').textContent = formatoNum(parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('pPAXG').textContent = ' (' + formatoNum(parseFloat(calcularPesoPAXG()),2) +  '%)';
-  document.getElementById('tPaxG').textContent = formatoNum(parseFloat(tenenciaPAXG),5);
-  document.getElementById('vPaxG').textContent = formatoNum(parseFloat(tenenciaPAXG)*parseFloat(document.getElementById('spCotPaxG').innerText),0);
+  document.getElementById('tPAXG').textContent = formatoNum(parseFloat(tenenciaPAXG),5);
+  document.getElementById('vPAXG').textContent = formatoNum(parseFloat(tenenciaPAXG)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('WBTC').textContent = formatoNum(parseFloat(document.getElementById('spCotWBTC').innerText),0);
   document.getElementById('pWBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
   document.getElementById('tWBTC').textContent = formatoNum(parseFloat(tenenciaWBTC),5);
@@ -266,22 +266,22 @@ let refrescar=()=>{
                                                       -parseFloat(document.getElementById('antes').innerText),0);
   document.getElementById('vBitcoin').textContent = formatoNum(parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText),0);
   document.getElementById('vEthereum').textContent = formatoNum(parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText),0);
-  document.getElementById('vPaxG').textContent = formatoNum(parseFloat(document.getElementById('pPaxG').innerText)*parseFloat(document.getElementById('spCotPaxG').innerText),0);
+  document.getElementById('vPAXG').textContent = formatoNum(parseFloat(document.getElementById('pPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText),0);
   document.getElementById('pBitcoin').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
-                                                      +parseFloat(document.getElementById('vPaxG').innerText)*parseFloat(document.getElementById('spCotPaxG').innerText)),2);
+                                                      +parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
   document.getElementById('pEthereum').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
-                                                      +parseFloat(document.getElementById('vPaxG').innerText)*parseFloat(document.getElementById('spCotPaxG').innerText)),2);
-  document.getElementById('pPaxG').textContent = formatoNum(
-                                                      100*parseFloat(document.getElementById('vPaxG').innerText)*parseFloat(document.getElementById('spCotPaxG').innerText)
+                                                      +parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
+  document.getElementById('pPAXG').textContent = formatoNum(
+                                                      100*parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
-                                                      +parseFloat(document.getElementById('vPaxG').innerText)*parseFloat(document.getElementById('spCotPaxG').innerText)),2);
+                                                      +parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
   document.getElementById('antes').textContent = formatoNum(parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
 }
 
