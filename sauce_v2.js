@@ -146,8 +146,8 @@ let calcularPesoBTC=() => {
 
 let calcularPesoPAXG=() => {  
   let cotPAXG = document.getElementById('spCotPAXG').innerText;  
-  alert('cotPAXG');
-  alert('tenenciaPAXG');
+  alert(cotPAXG);
+  alert(tenenciaPAXG);
   let dPAXG = tenenciaPAXG * cotPAXG;
   let peso = dPAXG * 100 / calcularTotal();
   return peso;
