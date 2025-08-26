@@ -277,7 +277,7 @@ let refrescar=()=>{
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
                                                       +parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)),2);
-  document.getElementById('pPAXG').textContent = formatoNum(
+  document.getElementById('pPAXGOLD').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('vPAXG').innerText)*parseFloat(document.getElementById('spCotPAXG').innerText)
                                                       /(parseFloat(document.getElementById('vBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
                                                       +parseFloat(document.getElementById('vEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)
