@@ -57,30 +57,7 @@ let obtenerCotGeckoTerminal = (Id) => {
       return 0;
     }
 };
-/*
-let obtenerPorHedera = (Id, temp) => {
-    try {
-      //vpa
-      let resultado;
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', apiUrGeckoTerminal+Id, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
-      xhr.send();
-      if (xhr.status === 200) {
-          const data = JSON.parse(xhr.responseText);
-          resultado = data;
-      } else {
-          console.error('Error fetching data porcentaje Hedera (1):' + xhr.statusText);
-          return 0;
-      }
-      let cot = resultado.data.attributes.price_change_percentage[temp];
-      return formatoNum(parseFloat(cot),1);
-    }
-    catch(error) {
-      console.error('Error fetching data porcentaje Hedera (2):' + error);
-      return 0;
-    }
-};
-*/
+
 let obtenerCotBitget = (symbol) => {
     try {
       let resultado;
@@ -276,6 +253,7 @@ document.getElementById('pBitcoin').textContent = formatoNum(
                                                       /(parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotWBTC').innerText)
                                                       +parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)),2);
 document.getElementById('pEthereum').textContent = formatoNum(parseFloat(document.getElementById('pBitcoin').textContent),2);
-document.getElementById('antes').textContent = formatoNum(100-parseFloat(replace(document.getElementById('antes').textContent,',','.')),0);
+//document.getElementById('antes').textContent = formatoNum(100-parseFloat(replace(document.getElementById('antes').textContent,',','.')),0);
+document.getElementById('antes').textContent = replace(document.getElementById('antes').textContent,',','.');
 }
 
