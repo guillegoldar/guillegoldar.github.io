@@ -275,7 +275,7 @@ document.getElementById('pBitcoin').textContent = formatoNum(
                                                       100*parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotWBTC').innerText)
                                                       /(parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotWBTC').innerText)
                                                       +parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText)),2);
-document.getElementById('pEthereum').textContent = formatoNum(100.00-parseFloat(document.getElementById('pBitcoin').textContent),2);
+document.getElementById('pEthereum').textContent = formatoNum(parseFloat(document.getElementById('pBitcoin').textContent),2);
 document.getElementById('antes').textContent = formatoNum(parseFloat(document.getElementById('antes').textContent),0);
 }
 
