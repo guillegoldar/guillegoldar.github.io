@@ -176,4 +176,3 @@ let refrescar=()=>{
                                                             -parseFloat(document.getElementById('antes').innerText),0);
   document.getElementById('antes').textContent = formatoNum(parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
 }
-
