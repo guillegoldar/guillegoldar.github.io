@@ -155,7 +155,7 @@ let refrescar=()=>{
   document.getElementById('tUSDC').textContent = formatoNum(parseFloat(tenenciaUSDC),0);
   document.getElementById('vUSDC').textContent = formatoNum(parseFloat(tenenciaUSDC)*parseFloat(document.getElementById('spCotUSDC').innerText),0);
   document.getElementById('BTC').textContent = formatoNum(parseFloat(document.getElementById('spCotBTC').innerText),0);
-  document.getElementById('pBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoWBTC()),2) +  '%)';
+  document.getElementById('pBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoBTC()),2) +  '%)';
   document.getElementById('tBTC').textContent = formatoNum(parseFloat(tenenciaBTC),5);
   document.getElementById('vBTC').textContent = formatoNum(parseFloat(tenenciaBTC)*parseFloat(document.getElementById('spCotBTC').innerText),0);
   document.getElementById('PAXG').textContent = formatoNum(parseFloat(document.getElementById('spCotPAXG').innerText),0);
