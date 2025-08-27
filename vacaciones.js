@@ -95,6 +95,7 @@ let calcularTotal=() => {
   let cotBTC = document.getElementById('spCotBTC').innerText;  
   let cotPAXG = document.getElementById('spCotPAXG').innerText;  
   let cotETH = document.getElementById('spCotETH').innerText;    
+  let cotBNB = document.getElementById('spCotBNB').innerHTML;
     let total = (tenenciaUSDC * cotUSDC
                     + tenenciaPAXG * cotPAXG
                     + tenenciaBTC * cotBTC
