@@ -171,7 +171,6 @@ let refrescar=()=>{
   document.getElementById('tKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta),0);
   document.getElementById('vKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
-  document.getElementById('dATH').textContent = ' (desde ATH ' + formatoNum((calcularTotal()-8500)*100/8500,0) + '%)';
   document.getElementById('despues').textContent = formatoNum(916+parseFloat(document.getElementById('total').innerText),0);
   document.getElementById('dif').textContent = formatoNum(parseFloat(document.getElementById('despues').innerText)
                                                             -parseFloat(document.getElementById('antes').innerText),0);
