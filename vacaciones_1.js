@@ -172,13 +172,9 @@ let refrescar=()=>{
   document.getElementById('vKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('dATH').textContent = ' (desde ATH ' + formatoNum((calcularTotal()-8500)*100/8500,0) + '%)';
-  document.getElementById('despues').textContent = formatoNum(916
-                                                      +parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
-                                                      +parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText),0);
-  document.getElementById('dif').textContent = formatoNum((916
-                                                      +parseFloat(document.getElementById('pBitcoin').innerText)*parseFloat(document.getElementById('spCotBTC').innerText)
-                                                      +parseFloat(document.getElementById('pEthereum').innerText)*parseFloat(document.getElementById('spCotETH').innerText))
-                                                      -parseFloat(document.getElementById('antes').innerText),0);
+  document.getElementById('despues').textContent = formatoNum(916+parseFloat(document.getElementById('total').innerText),0);
+  document.getElementById('dif').textContent = formatoNum(parseFloat(document.getElementById('despues').innerText)
+                                                            -parseFloat(document.getElementById('antes').innerText),0);
   document.getElementById('antes').textContent = formatoNum(parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
 }
 
