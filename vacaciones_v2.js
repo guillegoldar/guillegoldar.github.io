@@ -99,6 +99,7 @@ let calcularTotal=() => {
                     + tenenciaPAXG * cotPAXG
                     + tenenciaBTC * cotBTC
                     + tenenciaETH * cotETH
+                    + tenenciaBNB * cotBNB
 				)
   return total;
 };
