@@ -171,7 +171,7 @@ let refrescar=()=>{
   document.getElementById('tKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta),0);
   document.getElementById('vKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
-  document.getElementById('despues').textContent = formatoNum(916+calcularTotal(),0);
-  document.getElementById('dif').textContent = formatoNum(916 + calcularTotal() - parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
+  document.getElementById('despues').textContent = formatoNum(387 + calcularTotal(),0);
+  document.getElementById('dif').textContent = formatoNum(387 + calcularTotal() - parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
   document.getElementById('antes').textContent = formatoNum(parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
 }
