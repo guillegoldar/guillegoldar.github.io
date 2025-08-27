@@ -6,12 +6,10 @@ const USDCSimbol = 'USDCUSDT';
 const PAXGSimbol = 'PAXGUSDT';
 const BTCSimbol = 'BTCUSDT';
 const ETHSimbol = 'ETHUSDT';
-const KeetaId = 'base/pools/0xd9edc75a3a797ec92ca370f19051babebfb2edee';
 const tenenciaUSDC = document.getElementById('tUSDC').innerText;
 const tenenciaBTC = document.getElementById('tBTC').innerText;
 const tenenciaPAXG = document.getElementById('tPAXG').innerText;
 const tenenciaETH = document.getElementById('tETH').innerText;
-const tenenciaKeeta = document.getElementById('tKeeta').innerText;
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
@@ -95,10 +93,8 @@ let calcularTotal=() => {
   let cotBTC = document.getElementById('spCotBTC').innerText;  
   let cotPAXG = document.getElementById('spCotPAXG').innerText;  
   let cotETH = document.getElementById('spCotETH').innerText;    
-  let cotKeeta = document.getElementById('spCotKeeta').innerText;
-  let total = (tenenciaUSDC * cotUSDC
+    let total = (tenenciaUSDC * cotUSDC
                     + tenenciaPAXG * cotPAXG
-                    + tenenciaKeeta * cotKeeta
                     + tenenciaBTC * cotBTC
                     + tenenciaETH * cotETH
 				)
@@ -133,19 +129,11 @@ let calcularPesoETH=() => {
   return peso;
 };
 
-let calcularPesoKeeta=() => {  
-  let cotKeeta = document.getElementById('spCotKeeta').innerText;  
-  let dKeeta = tenenciaKeeta * cotKeeta;
-  let peso = dKeeta * 100 / calcularTotal();
-  return peso;
-};
-
 let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
   document.getElementById('spCotPAXG').textContent = obtenerCotBitget(PAXGSimbol);
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
-  document.getElementById('spCotKeeta').textContent =  obtenerCotGeckoTerminal(KeetaId);
 }
 
 let refrescar=()=>{
@@ -166,10 +154,6 @@ let refrescar=()=>{
   document.getElementById('pETH').textContent = ' (' + formatoNum(parseFloat(calcularPesoETH()),2) +  '%)';
   document.getElementById('tETH').textContent = formatoNum(parseFloat(tenenciaETH),5);
   document.getElementById('vETH').textContent = formatoNum(parseFloat(tenenciaETH)*parseFloat(document.getElementById('spCotETH').innerText),0);
-  document.getElementById('Keeta').textContent = formatoNum(parseFloat(document.getElementById('spCotKeeta').innerText),3);
-  document.getElementById('pKeeta').textContent = ' (' + formatoNum(parseFloat(calcularPesoKeeta()),2) +  '%)';
-  document.getElementById('tKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta),0);
-  document.getElementById('vKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('despues').textContent = formatoNum(387 + calcularTotal(),0);
   document.getElementById('dif').textContent = formatoNum(387 + calcularTotal() - parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);

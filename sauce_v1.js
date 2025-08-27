@@ -9,7 +9,7 @@ const WBTCId = 'hedera-hashgraph/pools/0x29450f04b7ab6ff1cbcc199c3b992f79001e762
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
 const XSauceId = 'hedera-hashgraph/pools/0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
-const KeetaId = 'base/pools/0xd9edc75a3a797ec92ca370f19051babebfb2edee';
+const GibId = 'hedera-hashgraph/pools/0xd9edc75a3a797ec92ca370f19051babebfb2edee';
 const DosaId = 'hedera-hashgraph/pools/0xcba362fea1145be558833ffae29cb110cc55a62e';
 const JeetId = 'hedera-hashgraph/pools/0x1f0c4011e3dbad2b1264fcf99ba54f456b1a35fe';
 const tenenciaUSDC = document.getElementById('tUSDC').innerText;
@@ -19,7 +19,7 @@ const tenenciaWBTC = document.getElementById('tWBTC').innerText;
 const tenenciaETH = document.getElementById('tETH').innerText;
 const tenenciaHBAR = document.getElementById('tHBAR').innerText;
 const tenenciaXSauce = document.getElementById('tXSauce').innerText;
-const tenenciaKeeta = document.getElementById('tKeeta').innerText;
+const tenenciaGib = document.getElementById('tGib').innerText;
 const tenenciaDosa = document.getElementById('tDosa').innerText;
 const tenenciaJeet = document.getElementById('tJeet').innerText;
 
@@ -108,7 +108,7 @@ let calcularTotal=() => {
   let cotWBTC = document.getElementById('spCotWBTC').innerText;  
   let cotHBAR = document.getElementById('spCotHBAR').innerText;    
   let cotXSauce = document.getElementById('spCotXSauce').innerText;
-  let cotKeeta = document.getElementById('spCotKeeta').innerText;
+  let cotGib = document.getElementById('spCotGib').innerText;
   let cotDosa = document.getElementById('spCotDosa').innerText;  
   let cotJeet = document.getElementById('spCotJeet').innerText;
   let total = (tenenciaUSDC * cotUSDC
@@ -116,7 +116,7 @@ let calcularTotal=() => {
              + tenenciaPAXG * cotPAXG
   				   + tenenciaHBAR * cotHBAR				   
 				     + tenenciaXSauce * cotXSauce 
-     			   + tenenciaKeeta * cotKeeta
+     			   + tenenciaGib * cotGib
 				     + tenenciaDosa * cotDosa
 				     + tenenciaJeet * cotJeet
 				)
@@ -172,10 +172,10 @@ let calcularPesoXSauce=() => {
   return peso;
 };
 
-let calcularPesoKeeta=() => {  
-  let cotKeeta = document.getElementById('spCotKeeta').innerText;  
-  let dKeeta = tenenciaKeeta * cotKeeta;
-  let peso = dKeeta * 100 / calcularTotal();
+let calcularPesoGib=() => {  
+  let cotGib = document.getElementById('spCotGib').innerText;  
+  let dGib = tenenciaGib * cotGib;
+  let peso = dGib * 100 / calcularTotal();
   return peso;
 };
 
@@ -201,7 +201,7 @@ let inicializar=()=>{
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
   document.getElementById('spCotXSauce').textContent = obtenerCotGeckoTerminal(XSauceId);
-  document.getElementById('spCotKeeta').textContent =  obtenerCotGeckoTerminal(KeetaId);
+  document.getElementById('spCotGib').textContent =  obtenerCotGeckoTerminal(GibId);
   document.getElementById('spCotDosa').textContent =  obtenerCotGeckoTerminal(DosaId);
   document.getElementById('spCotJeet').textContent =  obtenerCotGeckoTerminal(JeetId);
 }
@@ -236,10 +236,10 @@ let refrescar=()=>{
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('tXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce),0);
   document.getElementById('vXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce)*parseFloat(document.getElementById('spCotXSauce').innerText),0);
-  document.getElementById('Keeta').textContent = formatoNum(parseFloat(document.getElementById('spCotKeeta').innerText),3);
-  document.getElementById('pKeeta').textContent = ' (' + formatoNum(parseFloat(calcularPesoKeeta()),2) +  '%)';
-  document.getElementById('tKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta),0);
-  document.getElementById('vKeeta').textContent = formatoNum(parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText),0);
+  document.getElementById('Gib').textContent = formatoNum(parseFloat(document.getElementById('spCotGib').innerText),3);
+  document.getElementById('pGib').textContent = ' (' + formatoNum(parseFloat(calcularPesoGib()),2) +  '%)';
+  document.getElementById('tGib').textContent = formatoNum(parseFloat(tenenciaGib),0);
+  document.getElementById('vGib').textContent = formatoNum(parseFloat(tenenciaGib)*parseFloat(document.getElementById('spCotGib').innerText),0);
   document.getElementById('Dosa').textContent = formatoNum(parseFloat(document.getElementById('spCotDosa').innerText),5);
   document.getElementById('pDosa').textContent = ' (' + formatoNum(parseFloat(calcularPesoDosa()),2) +  '%)';
   document.getElementById('tDosa').textContent = formatoNum(parseFloat(tenenciaDosa),0);
@@ -254,7 +254,7 @@ let refrescar=()=>{
   document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
   document.getElementById('totalMeme').textContent = formatoNum((0
                                                      +parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText)
-                                                     +parseFloat(tenenciaKeeta)*parseFloat(document.getElementById('spCotKeeta').innerText)
+                                                     +parseFloat(tenenciaGib)*parseFloat(document.getElementById('spCotGib').innerText)
                                                      +parseFloat(tenenciaJeet)*parseFloat(document.getElementById('spCotJeet').innerText))
                                                      /parseFloat(calcularTotal())*100,2);
   }
