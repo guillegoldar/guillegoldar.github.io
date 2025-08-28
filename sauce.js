@@ -236,7 +236,7 @@ let refrescar=()=>{
   document.getElementById('pXSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoXSauce()),2) +  '%)';
   document.getElementById('tXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce),0);
   document.getElementById('vXSauce').textContent = formatoNum(parseFloat(tenenciaXSauce)*parseFloat(document.getElementById('spCotXSauce').innerText),0);
-  document.getElementById('Gib').textContent = formatoNum(parseFloat(document.getElementById('spCotGib').innerText),3);
+  document.getElementById('Gib').textContent = formatoNum(parseFloat(document.getElementById('spCotGib').innerText),5);
   document.getElementById('pGib').textContent = ' (' + formatoNum(parseFloat(calcularPesoGib()),2) +  '%)';
   document.getElementById('tGib').textContent = formatoNum(parseFloat(tenenciaGib),0);
   document.getElementById('vGib').textContent = formatoNum(parseFloat(tenenciaGib)*parseFloat(document.getElementById('spCotGib').innerText),0);
