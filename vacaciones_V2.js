@@ -144,13 +144,6 @@ let calcularPesoBNB=() => {
   return peso;
 };
 
-let calcularPesoETH=() => {  
-  let cotETH = document.getElementById('spCotETH').innerText;  
-  let dETH = tenenciaETH * cotETH;
-  let peso = dETH * 100 / calcularTotal();
-  return peso;
-};
-
 let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
