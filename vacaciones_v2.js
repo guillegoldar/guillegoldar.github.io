@@ -144,6 +144,13 @@ let calcularPesoBNB=() => {
   return peso;
 };
 
+let calcularPesoHBAR=() => {  
+  let cotHBAR = document.getElementById('spCotHBAR').innerText;  
+  let dHBAR = tenenciaHBAR * cotHBAR;
+  let peso = dHBAR * 100 / calcularTotal();
+  return peso;
+};
+
 let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
