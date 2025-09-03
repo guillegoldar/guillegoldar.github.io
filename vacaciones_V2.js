@@ -6,12 +6,14 @@ const USDCSimbol = 'USDCUSDT';
 const PAXGSimbol = 'PAXGUSDT';
 const BTCSimbol = 'BTCUSDT';
 const ETHSimbol = 'ETHUSDT';
+const HBARSimbol = 'HBARUSDT';
 const BNBSimbol = 'BNBUSDT';
 const tenenciaUSDC = document.getElementById('tUSDC').innerText;
 const tenenciaBTC = document.getElementById('tBTC').innerText;
 const tenenciaPAXG = document.getElementById('tPAXG').innerText;
 const tenenciaETH = document.getElementById('tETH').innerText;
 const tenenciaBNB = document.getElementById('tBNB').innerText;
+const tenenciaHBAR = document.getElementById('tHBAR').innerText;
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
@@ -96,11 +98,13 @@ let calcularTotal=() => {
   let cotPAXG = document.getElementById('spCotPAXG').innerText;  
   let cotETH = document.getElementById('spCotETH').innerText;    
   let cotBNB = document.getElementById('spCotBNB').innerHTML;
+  let cotHBAR = document.getElementById('spCotHBAR').innerText;    
     let total = (tenenciaUSDC * cotUSDC
                     + tenenciaPAXG * cotPAXG
                     + tenenciaBTC * cotBTC
                     + tenenciaETH * cotETH
                     + tenenciaBNB * cotBNB
+  				          + tenenciaHBAR * cotHBAR		
 				)
   return total;
 };
@@ -140,12 +144,20 @@ let calcularPesoBNB=() => {
   return peso;
 };
 
+let calcularPesoETH=() => {  
+  let cotETH = document.getElementById('spCotETH').innerText;  
+  let dETH = tenenciaETH * cotETH;
+  let peso = dETH * 100 / calcularTotal();
+  return peso;
+};
+
 let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
   document.getElementById('spCotPAXG').textContent = obtenerCotBitget(PAXGSimbol);
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotBNB').textContent = obtenerCotBitget(BNBSimbol);  
+  document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol); 
 }
 
 let refrescar=()=>{
@@ -170,6 +182,10 @@ let refrescar=()=>{
   document.getElementById('pBNB').textContent = ' (' + formatoNum(parseFloat(calcularPesoBNB()),2) +  '%)';
   document.getElementById('tBNB').textContent = formatoNum(parseFloat(tenenciaBNB),5);
   document.getElementById('vBNB').textContent = formatoNum(parseFloat(tenenciaBNB)*parseFloat(document.getElementById('spCotBNB').innerText),0);
+  document.getElementById('HBAR').textContent = formatoNum(parseFloat(document.getElementById('spCotHBAR').innerText),3);
+  document.getElementById('pHBAR').textContent = ' (' + formatoNum(parseFloat(calcularPesoHBAR()),2) +  '%)';
+  document.getElementById('tHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR),0);
+  document.getElementById('vHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR)*parseFloat(document.getElementById('spCotHBAR').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('despues').textContent = formatoNum(387 + calcularTotal(),0);
   document.getElementById('dif').textContent = formatoNum(387 + calcularTotal() - parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
