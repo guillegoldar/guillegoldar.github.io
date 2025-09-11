@@ -8,12 +8,14 @@ const BTCSimbol = 'BTCUSDT';
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
 const BNBSimbol = 'BNBUSDT';
+const SauceId = 'hedera-hashgraph/pools/0x5fc19c944f1bccf5159e6ae92dc3bf2ff2576b98';
 const tenenciaUSDC = document.getElementById('tUSDC').innerText;
 const tenenciaBTC = document.getElementById('tBTC').innerText;
 const tenenciaPAXG = document.getElementById('tPAXG').innerText;
 const tenenciaETH = document.getElementById('tETH').innerText;
 const tenenciaBNB = document.getElementById('tBNB').innerText;
 const tenenciaHBAR = document.getElementById('tHBAR').innerText;
+const tenenciaSauce = document.getElementById('tSauce').innerText;
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
@@ -98,13 +100,15 @@ let calcularTotal=() => {
   let cotPAXG = document.getElementById('spCotPAXG').innerText;  
   let cotETH = document.getElementById('spCotETH').innerText;    
   let cotBNB = document.getElementById('spCotBNB').innerHTML;
-  let cotHBAR = document.getElementById('spCotHBAR').innerText;    
+  let cotHBAR = document.getElementById('spCotHBAR').innerText;   
+  let cotSauce = document.getElementById('spCotSauce').innerText; 
     let total = (tenenciaUSDC * cotUSDC
                     + tenenciaPAXG * cotPAXG
                     + tenenciaBTC * cotBTC
                     + tenenciaETH * cotETH
                     + tenenciaBNB * cotBNB
   				          + tenenciaHBAR * cotHBAR		
+				            + tenenciaSauce * cotSauce 
 				)
   return total;
 };
@@ -151,6 +155,13 @@ let calcularPesoHBAR=() => {
   return peso;
 };
 
+let calcularPesoSauce=() => {  
+  let cotSauce = document.getElementById('spCotSauce').innerText;  
+  let dSauce = tenenciaSauce * cotSauce;
+  let peso = dSauce * 100 / calcularTotal();
+  return peso;
+};
+
 let inicializar=()=>{
   document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
@@ -158,6 +169,7 @@ let inicializar=()=>{
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotBNB').textContent = obtenerCotBitget(BNBSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol); 
+  document.getElementById('spCotSauce').textContent = obtenerCotGeckoTerminal(SauceId);
 }
 
 let refrescar=()=>{
@@ -186,6 +198,10 @@ let refrescar=()=>{
   document.getElementById('pHBAR').textContent = ' (' + formatoNum(parseFloat(calcularPesoHBAR()),2) +  '%)';
   document.getElementById('tHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR),0);
   document.getElementById('vHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR)*parseFloat(document.getElementById('spCotHBAR').innerText),0);
+  document.getElementById('sauce').textContent = formatoNum(parseFloat(document.getElementById('spCotSauce').innerText),3);
+  document.getElementById('pSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoSauce()),2) +  '%)';
+  document.getElementById('tSauce').textContent = formatoNum(parseFloat(tenenciaSauce),0);
+  document.getElementById('vSauce').textContent = formatoNum(parseFloat(tenenciaSauce)*parseFloat(document.getElementById('spCotSauce').innerText),0);
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('despues').textContent = formatoNum(387 + calcularTotal(),0);
   document.getElementById('dif').textContent = formatoNum(387 + calcularTotal() - parseFloat(document.getElementById('antes').textContent.replace(',','.')),0);
