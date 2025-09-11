@@ -208,7 +208,7 @@ let inicializar=()=>{
 
 let refrescar=()=>{
   inicializar();
-  document.getElementById('USDC').textContent = formatoNum(parseFloat(document.getElementById('spCotUSDC').innerText),3);
+  document.getElementById('USDC').textContent = formatoNum(parseFloat(document.getElementById('spCotUSDC').innerText),0);
   document.getElementById('pUSDC').textContent = ' (' + formatoNum(parseFloat(calcularPesoUSDC()),2) +  '%)';
   document.getElementById('tUSDC').textContent = formatoNum(parseFloat(tenenciaUSDC),0);
   document.getElementById('vUSDC').textContent = formatoNum(parseFloat(tenenciaUSDC)*parseFloat(document.getElementById('spCotUSDC').innerText),0);
