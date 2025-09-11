@@ -198,7 +198,7 @@ let refrescar=()=>{
   document.getElementById('pHBAR').textContent = ' (' + formatoNum(parseFloat(calcularPesoHBAR()),2) +  '%)';
   document.getElementById('tHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR),0);
   document.getElementById('vHBAR').textContent = formatoNum(parseFloat(tenenciaHBAR)*parseFloat(document.getElementById('spCotHBAR').innerText),0);
-  document.getElementById('sauce').textContent = formatoNum(parseFloat(document.getElementById('spCotSauce').innerText),3);
+  document.getElementById('Sauce').textContent = formatoNum(parseFloat(document.getElementById('spCotSauce').innerText),3);
   document.getElementById('pSauce').textContent = ' (' + formatoNum(parseFloat(calcularPesoSauce()),2) +  '%)';
   document.getElementById('tSauce').textContent = formatoNum(parseFloat(tenenciaSauce),0);
   document.getElementById('vSauce').textContent = formatoNum(parseFloat(tenenciaSauce)*parseFloat(document.getElementById('spCotSauce').innerText),0);
