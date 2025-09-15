@@ -163,7 +163,7 @@ let calcularPesoSauce=() => {
 };
 
 let inicializar=()=>{
-  document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
+  document.getElementById('spCotUSDC').textContent = 1;//obtenerCotBitget(USDCSimbol);
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
   document.getElementById('spCotPAXG').textContent = obtenerCotBitget(PAXGSimbol);
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
@@ -174,10 +174,10 @@ let inicializar=()=>{
 
 let refrescar=()=>{
   inicializar();
-  document.getElementById('USDC').textContent = formatoNum(parseFloat(document.getElementById('spCotUSDC').innerText),3);
+  document.getElementById('USDC').textContent = 1;//formatoNum(parseFloat(document.getElementById('spCotUSDC').innerText),3);
   document.getElementById('pUSDC').textContent = ' (' + formatoNum(parseFloat(calcularPesoUSDC()),2) +  '%)';
   document.getElementById('tUSDC').textContent = formatoNum(parseFloat(tenenciaUSDC),0);
-  document.getElementById('vUSDC').textContent = formatoNum(parseFloat(tenenciaUSDC)*parseFloat(document.getElementById('spCotUSDC').innerText),0);
+  document.getElementById('vUSDC').textContent = formatoNum(parseFloat(tenenciaUSDC),0);
   document.getElementById('BTC').textContent = formatoNum(parseFloat(document.getElementById('spCotBTC').innerText),0);
   document.getElementById('pBTC').textContent = ' (' + formatoNum(parseFloat(calcularPesoBTC()),2) +  '%)';
   document.getElementById('tBTC').textContent = formatoNum(parseFloat(tenenciaBTC),5);
