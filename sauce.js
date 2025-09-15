@@ -194,7 +194,7 @@ let calcularPesoJeet=() => {
 };
 
 let inicializar=()=>{
-  document.getElementById('spCotUSDC').textContent = obtenerCotDolar();
+  document.getElementById('spCotUSDC').textContent = 1;//obtenerCotDolar();
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
   document.getElementById('spCotPAXG').textContent = obtenerCotBitget(PAXGSimbol);
   document.getElementById('spCotWBTC').textContent = obtenerCotGeckoTerminal(WBTCId);
