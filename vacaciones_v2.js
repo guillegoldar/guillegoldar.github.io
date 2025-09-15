@@ -95,7 +95,7 @@ let obtenerCotDolar=()=> {
 };
 
 let calcularTotal=() => {  
-  let cotUSDC = document.getElementById('spCotUSDC').innerText;  
+  let cotUSDC = 1;//document.getElementById('spCotUSDC').innerText;  
   let cotBTC = document.getElementById('spCotBTC').innerText;  
   let cotPAXG = document.getElementById('spCotPAXG').innerText;  
   let cotETH = document.getElementById('spCotETH').innerText;    
@@ -114,7 +114,7 @@ let calcularTotal=() => {
 };
 
 let calcularPesoUSDC=() => {  
-  let cotUSDC = document.getElementById('spCotUSDC').innerText;  
+  let cotUSDC = 1;//document.getElementById('spCotUSDC').innerText;  
   let dUSDC = tenenciaUSDC * cotUSDC;
   let peso = dUSDC * 100 / calcularTotal();
   return peso;
