@@ -96,7 +96,7 @@ let obtenerCotGateIO = (symbol) => {
       } else {
           console.error('Error fetching data:', xhr.statusText);
       }
-      let cot = resultado.data.last;
+      let cot = resultado[0].last;
       return cot;
     }
     catch(error) {
