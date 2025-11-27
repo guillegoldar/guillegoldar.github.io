@@ -234,7 +234,7 @@ let inicializar=()=>{
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
   document.getElementById('spCotXSauce').textContent = obtenerCotGeckoTerminal(XSauceId);
-  document.getElementById('spCotSauce').textContent = obtenerCotGateIO(SauceSimbol);
+  document.getElementById('spCotSauce').textContent = obtenerCotGeckoTerminal(SauceId);
   document.getElementById('spCotGib').textContent =  obtenerCotGeckoTerminal(GibId);
   document.getElementById('spCotDosa').textContent =  obtenerCotGeckoTerminal(DosaId);
   document.getElementById('spCotJeet').textContent =  obtenerCotGeckoTerminal(JeetId);  
