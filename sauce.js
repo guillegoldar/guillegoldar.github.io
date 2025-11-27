@@ -1,7 +1,7 @@
 // Definir la URL de la API
 const apiUrGeckoTerminal = 'https://api.geckoterminal.com/api/v2/networks/';
 const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol=';
-const apiUrlGateIO = 'https://api.gateio.ws/api/v4/spot/tickers?currency_pair=';
+const apiUrlGateIO = 'https://cors-anywhere.herokuapp.com/https://api.gateio.ws/api/v4/spot/tickers?currency_pair=';
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const USDCSimbol = 'USDCUSDT';
 const PAXGSimbol = 'PAXGUSDT';
