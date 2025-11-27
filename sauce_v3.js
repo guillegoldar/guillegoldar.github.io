@@ -1,6 +1,7 @@
 // Definir la URL de la API
 const apiUrGeckoTerminal = 'https://api.geckoterminal.com/api/v2/networks/';
 const apiUrlBitget = 'https://api.bitget.com/api/v2/spot/market/tickers?symbol=';
+const apiUrlGateIO = 'https://api.gateio.ws/api/v4/spot/tickers?currency_pair=';
 const apiUrlDolar = 'https://dolarapi.com/v1/dolares/cripto';
 const USDCSimbol = 'USDCUSDT';
 const PAXGSimbol = 'PAXGUSDT';
@@ -8,8 +9,9 @@ const BTCSimbol = 'BTCUSDT';
 const WBTCId = 'hedera-hashgraph/pools/0x29450f04b7ab6ff1cbcc199c3b992f79001e7621';
 const ETHSimbol = 'ETHUSDT';
 const HBARSimbol = 'HBARUSDT';
-const XSauceId = 'hedera-hashgraph/pools/0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
+const SauceSimbol = 'SAUCE_USDT';
 const SauceId = 'hedera-hashgraph/pools/0x4a46705176fac8fd5c8061f94a2c44416e7b20e6';
+const XSauceId = 'hedera-hashgraph/pools/0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
 const GibId = 'hedera-hashgraph/pools/0x5ae4d338e5c763a89dd29da5dbeaaebbdd0a390b';
 const DosaId = 'hedera-hashgraph/pools/0xcba362fea1145be558833ffae29cb110cc55a62e';
 const JeetId = 'hedera-hashgraph/pools/0x1f0c4011e3dbad2b1264fcf99ba54f456b1a35fe';
@@ -79,6 +81,26 @@ let obtenerCotBitget = (symbol) => {
     }
     catch(error) {
       console.log('Error fetching data Bitget:', error);
+    }
+};
+
+let obtenerCotGateIO = (symbol) => {
+    try {
+      let resultado;
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', apiUrlGateIO+symbol, false); // Establecer el tercer parámetro en 'false' para hacer la solicitud síncrona
+      xhr.send();
+      if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          resultado = data;
+      } else {
+          console.error('Error fetching data:', xhr.statusText);
+      }
+      let cot = resultado.last;
+      return cot;
+    }
+    catch(error) {
+      console.log('Error fetching data GateIO:', error);
     }
 };
 
@@ -212,7 +234,7 @@ let inicializar=()=>{
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
   document.getElementById('spCotHBAR').textContent = obtenerCotBitget(HBARSimbol);  
   document.getElementById('spCotXSauce').textContent = obtenerCotGeckoTerminal(XSauceId);
-  document.getElementById('spCotSauce').textContent = obtenerCotGeckoTerminal(SauceId);
+  document.getElementById('spCotSauce').textContent = obtenerCotGateIO(SauceSimbol);
   document.getElementById('spCotGib').textContent =  obtenerCotGeckoTerminal(GibId);
   document.getElementById('spCotDosa').textContent =  obtenerCotGeckoTerminal(DosaId);
   document.getElementById('spCotJeet').textContent =  obtenerCotGeckoTerminal(JeetId);  
