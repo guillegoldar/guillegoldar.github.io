@@ -163,7 +163,7 @@ let calcularPesoSauce=() => {
 };
 
 let inicializar=()=>{
-  document.getElementById('spCotUSDC').textContent = obtenerCotBitget(USDCSimbol);
+  document.getElementById('spCotUSDC').textContent = 1;
   document.getElementById('spCotBTC').textContent = obtenerCotBitget(BTCSimbol);
   document.getElementById('spCotPAXG').textContent = obtenerCotBitget(PAXGSimbol);
   document.getElementById('spCotETH').textContent = obtenerCotBitget(ETHSimbol);  
