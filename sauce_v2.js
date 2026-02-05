@@ -14,7 +14,7 @@ const SauceId = 'hedera-hashgraph/pools/0x4a46705176fac8fd5c8061f94a2c44416e7b20
 const XSauceId = 'hedera-hashgraph/pools/0xc5767b107579abc10304ca1913b45ee7ac03fe7f';
 const GibId = 'hedera-hashgraph/pools/0x5ae4d338e5c763a89dd29da5dbeaaebbdd0a390b';
 const DosaId = 'hedera-hashgraph/pools/0xcba362fea1145be558833ffae29cb110cc55a62e';
-const JeetId = 'hedera-hashgraph/pools/0x1f0c4011e3dbad2b1264fcf99ba54f456b1a35fe';
+//const JeetId = 'hedera-hashgraph/pools/0x1f0c4011e3dbad2b1264fcf99ba54f456b1a35fe';
 const tenenciaUSDC = document.getElementById('tUSDC').innerText;
 const tenenciaBTC = document.getElementById('tBTC').innerText;
 const tenenciaPAXG = document.getElementById('tPAXG').innerText;
@@ -25,7 +25,7 @@ const tenenciaXSauce = document.getElementById('tXSauce').innerText;
 const tenenciaSauce = document.getElementById('tSauce').innerText;
 const tenenciaGib = document.getElementById('tGib').innerText;
 const tenenciaDosa = document.getElementById('tDosa').innerText;
-const tenenciaJeet = document.getElementById('tJeet').innerText;
+//const tenenciaJeet = document.getElementById('tJeet').innerText;
 
 let formatoNum = (num, cantDec) => {
   let numForm = num.toLocaleString('es-AR', {
@@ -135,7 +135,7 @@ let calcularTotal=() => {
   let cotSauce = document.getElementById('spCotSauce').innerText;
   let cotGib = document.getElementById('spCotGib').innerText;
   let cotDosa = document.getElementById('spCotDosa').innerText;  
-  let cotJeet = document.getElementById('spCotJeet').innerText;  
+  //let cotJeet = document.getElementById('spCotJeet').innerText;  
   let total = (tenenciaUSDC * cotUSDC
   				   + tenenciaWBTC * cotWBTC
              + tenenciaPAXG * cotPAXG
@@ -144,7 +144,7 @@ let calcularTotal=() => {
 				     + tenenciaSauce * cotSauce 
 				     + tenenciaGib * cotGib
 				     + tenenciaDosa * cotDosa
-				     + tenenciaJeet * cotJeet
+	//			     + tenenciaJeet * cotJeet
 				)
   return total;
 };
@@ -237,7 +237,7 @@ let inicializar=()=>{
   document.getElementById('spCotSauce').textContent = obtenerCotGeckoTerminal(SauceId);
   document.getElementById('spCotGib').textContent =  obtenerCotGeckoTerminal(GibId);
   document.getElementById('spCotDosa').textContent =  obtenerCotGeckoTerminal(DosaId);
-  document.getElementById('spCotJeet').textContent =  obtenerCotGeckoTerminal(JeetId);  
+//  document.getElementById('spCotJeet').textContent =  obtenerCotGeckoTerminal(JeetId);  
 }
 
 let refrescar=()=>{
@@ -282,19 +282,19 @@ let refrescar=()=>{
   document.getElementById('pDosa').textContent = ' (' + formatoNum(parseFloat(calcularPesoDosa()),2) +  '%)';
   document.getElementById('tDosa').textContent = formatoNum(parseFloat(tenenciaDosa),0);
   document.getElementById('vDosa').textContent = formatoNum(parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText),0);
-  document.getElementById('Jeet').textContent = formatoNum(parseFloat(document.getElementById('spCotJeet').innerText),5);
+/*  document.getElementById('Jeet').textContent = formatoNum(parseFloat(document.getElementById('spCotJeet').innerText),5);
   document.getElementById('pJeet').textContent = ' (' + formatoNum(parseFloat(calcularPesoJeet()),2) +  '%)';
   document.getElementById('tJeet').textContent = formatoNum(parseFloat(tenenciaJeet),0);
-  document.getElementById('vJeet').textContent = formatoNum(parseFloat(tenenciaJeet)*parseFloat(document.getElementById('spCotJeet').innerText),0);    
+  document.getElementById('vJeet').textContent = formatoNum(parseFloat(tenenciaJeet)*parseFloat(document.getElementById('spCotJeet').innerText),0);    */
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('dATH').textContent = ' (desde ATH ' + formatoNum((calcularTotal()-8679)*100/8679,0) + '%)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
-  document.getElementById('totalWBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotWBTC').innerText),5);
-  document.getElementById('totalMeme').textContent = formatoNum((0
+  document.getElementById('totalBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotBTC').innerText),5);
+  /*document.getElementById('totalMeme').textContent = formatoNum((0
                                                      +parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText)
                                                      +parseFloat(tenenciaGib)*parseFloat(document.getElementById('spCotGib').innerText)
                                                      +parseFloat(tenenciaJeet)*parseFloat(document.getElementById('spCotJeet').innerText))
-                                                     /parseFloat(calcularTotal())*100,2);
+                                                     /parseFloat(calcularTotal())*100,2);*/
     
 }
 
