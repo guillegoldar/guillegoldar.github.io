@@ -289,6 +289,7 @@ let refrescar=()=>{
   document.getElementById('total').textContent = formatoNum(calcularTotal(),0);
   document.getElementById('dATH').textContent = ' (desde ATH ' + formatoNum((calcularTotal()-8679)*100/8679,0) + '%)';
   document.getElementById('totalXSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotXSauce').innerText),0);
+  document.getElementById('totalSauce').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotSauce').innerText),0);
   document.getElementById('totalBTC').textContent = formatoNum(parseFloat(calcularTotal()/document.getElementById('spCotBTC').innerText),5);
   /*document.getElementById('totalMeme').textContent = formatoNum((0
                                                      +parseFloat(tenenciaDosa)*parseFloat(document.getElementById('spCotDosa').innerText)
